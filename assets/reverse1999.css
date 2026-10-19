@@ -561,11 +561,11 @@ body.r99 {
 
 /* 窄条标题：上下两条细线夹住编号与标题 */
 .r99-plate {
+  position: relative;
   display: flex;
   align-items: flex-end;
   gap: var(--r99-s3);
   padding: var(--r99-s2) 0;
-  border-top: var(--r99-hair) solid var(--r99-accent);
   border-bottom: var(--r99-hair) solid var(--r99-line);
   margin-bottom: var(--r99-s4);
 }
@@ -837,6 +837,7 @@ body.r99 {
 .r99-tabs button[aria-selected="true"] {
   color: var(--r99-text);
 }
+
 .r99-tabs button[aria-selected="true"]::after {
   content: "";
   position: absolute;
@@ -845,6 +846,7 @@ body.r99 {
   bottom: -1px;
   height: var(--r99-strong);
   background: var(--r99-accent);
+  transform: scaleX(1);
 }
 
 /* ---------- 11. 卡片与图 ---------- */
@@ -856,7 +858,9 @@ body.r99 {
   border: var(--r99-hair) solid var(--r99-line);
   border-radius: 0;
   overflow: hidden;
-  transition: border-color var(--r99-t-hover) ease;
+  transition:
+    border-color var(--r99-t-hover) ease,
+    filter var(--r99-t-hover) ease;
 }
 .r99-card:hover {
   border-color: var(--r99-accent);
@@ -1148,6 +1152,7 @@ body.r99 {
   overflow: hidden;
   transition: transform 240ms var(--r99-ease-enter);
 }
+
 .r99-toast {
   display: flex;
   align-items: center;
@@ -1161,6 +1166,7 @@ body.r99 {
   border-radius: 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   font-family: var(--r99-serif);
+  animation: r99-toast-in 260ms var(--r99-ease-enter) both;
 }
 .r99-toast__icon {
   flex: none;
@@ -1724,22 +1730,22 @@ body.r99 {
   gap: 6px;
   margin: 0;
   color: var(--r99-ink);
+  transition: filter var(--r99-t-hover) ease;
 }
+
 .r99-item__plate {
   position: relative;
   display: block;
   width: min(100%, var(--r99-item-frame));
   aspect-ratio: 1;
-  background: #ffffff;
-  border: var(--r99-hair) solid rgba(255, 250, 240, 0.3);
-  border-radius: 0;
-  overflow: hidden;
-}
-.r99-item__plate {
   background:
     linear-gradient(180deg, rgba(14, 12, 11, 0.94) 0%, rgba(14, 12, 11, 0.78) 46%, rgba(14, 12, 11, 0.12) 78%, transparent 100%),
     radial-gradient(130% 78% at 50% 104%, var(--r99-rare, #8c8d8c) 0%, rgba(0, 0, 0, 0) 72%),
     #2a2522;
+  border: var(--r99-hair) solid rgba(255, 250, 240, 0.3);
+  border-radius: 0;
+  overflow: hidden;
+  container-type: inline-size;
 }
 [data-rare="6"] .r99-item__plate::after {
   content: "";
@@ -1784,12 +1790,12 @@ body.r99 {
   background: rgba(0, 0, 0, 0.34);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
-.r99-item__plate { container-type: inline-size; }
+
 .r99-item__name {
   font-size: var(--r99-fs-small);
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: var(--r99-text);
+  color: var(--r99-text-muted);
 }
 .r99-item__tag {
   font-family: var(--r99-display);
@@ -1797,14 +1803,11 @@ body.r99 {
   letter-spacing: 0.18em;
   color: var(--r99-text-muted);
 }
+
 .r99-item--muted .r99-item__plate {
   background: #f2efe8;
+  container-type: inline-size;
 }
-.r99-item--muted .r99-item__plate { container-type: inline-size; }
-.r99-item__name {
-  color: var(--r99-text-muted);
-}
-
 /* 稀有度小标：色点 + 罗马数字 */
 .r99-rare {
   display: inline-flex;
@@ -2164,13 +2167,15 @@ body.r99 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--r99-s4) var(--r99-s5);
 }
+
 .r99-special__item {
   display: grid;
-  grid-template-columns: 26px 1fr;
+  grid-template-columns: 30px 1fr;
   gap: 10px;
   font-size: var(--r99-fs-small);
   line-height: 1.9;
   color: var(--r99-text-muted);
+  align-items: start;
 }
 
 /* 入场券：左主券锈红渐变，右副券米纸，中间虚线即撕口 */
@@ -2474,9 +2479,6 @@ body.r99 {
 .r99-sheet:not([hidden]) {
   animation: r99-sheet-in 480ms var(--r99-ease-enter) both;
 }
-.r99-toast {
-  animation: r99-toast-in 260ms var(--r99-ease-enter) both;
-}
 @keyframes r99-toast-in {
   from { opacity: 0; transform: translateX(100%); }
   to   { opacity: 1; transform: translateX(0); }
@@ -2514,34 +2516,11 @@ body.r99 {
   transform-origin: left center;
   transition: transform 240ms var(--r99-ease-enter);
 }
-.r99-tabs button[aria-selected="true"]::after {
-  transform: scaleX(1);
-}
-
-/* 行与卡片：悬停过渡到描边与底色 */
-.r99-list a,
-.r99-row {
-  transition:
-    background-color var(--r99-t-hover) ease,
-    box-shadow var(--r99-t-hover) ease;
-}
-.r99-card {
-  transition:
-    border-color var(--r99-t-hover) ease,
-    filter var(--r99-t-hover) ease;
-}
-.r99-item {
-  transition: filter var(--r99-t-hover) ease;
-}
 .r99-item:hover {
   filter: brightness(0.97);
 }
 
 /* 分段标题：上沿线从左展开 */
-.r99-plate {
-  position: relative;
-  border-top: 0;
-}
 .r99-plate::before {
   content: "";
   position: absolute;
@@ -2757,11 +2736,6 @@ body.r99 {
 .r99-tabs--game button::after {
   display: none;
 }
-
-.r99-special__item {
-  grid-template-columns: 30px 1fr;
-  align-items: start;
-}
 .r99-special__icon {
   width: 22px;
   height: 22px;
@@ -2798,3 +2772,22 @@ body.r99 {
   top: 6px;
   right: 19px;
 }
+
+/* ---------- 28. 工具类 ---------- */
+
+.r99-u-flex { display: flex; }
+.r99-u-wrap { flex-wrap: wrap; }
+.r99-u-center { align-items: center; }
+.r99-u-between { justify-content: space-between; }
+.r99-u-text-center { text-align: center; }
+.r99-u-nowrap { white-space: nowrap; }
+.r99-u-gap-2 { gap: var(--r99-s2); }
+.r99-u-gap-3 { gap: var(--r99-s3); }
+.r99-u-m0 { margin: 0; }
+.r99-u-mt-1 { margin-top: var(--r99-s1); }
+.r99-u-mt-2 { margin-top: var(--r99-s2); }
+.r99-u-mt-12 { margin-top: 12px; }
+.r99-u-mt-3 { margin-top: var(--r99-s3); }
+.r99-u-mt-4 { margin-top: var(--r99-s4); }
+.r99-u-mb-2 { margin-bottom: var(--r99-s2); }
+.r99-u-mb-3 { margin-bottom: var(--r99-s3); }
