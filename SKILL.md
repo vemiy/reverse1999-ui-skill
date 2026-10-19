@@ -1,6 +1,12 @@
 ---
 name: reverse1999-ui
-description: Build interfaces in the visual language of Reverse: 1999 (重返未来 1999 风格 / 1999 风格 / 复古英伦 / 装饰艺术 / 档案册 / 雨夜). Use when a screen should read like a printed archive rather than a product dashboard: dark photographic ground, cream paper panels, one rust hairline accent, square corners whose shape comes from cut corners, Chinese serif with Didone Latin labels, real record numbers and dates, fades instead of bounces, controls that darken on hover and press. Covers web, mobile web, H5, mini programs, Flutter, iOS and Android. Ships tokens, a CSS kit, a build-verified Flutter kit, page templates, in-game parts, platform guides and screenshots. Uses no game assets and no official fonts.
+description: >-
+  Build interfaces in the visual language of Reverse: 1999 (重返未来 1999 风格 / 1999 风格 / 复古英伦 / 装饰艺术 / 档案册 / 雨夜).
+  Use when a screen should read like a printed archive rather than a product dashboard: dark photographic ground,
+  cream paper panels, one rust hairline accent, square corners whose shape comes from cut corners, Chinese serif with
+  Didone Latin labels, real record numbers and dates, fades instead of bounces, controls that darken on hover and press.
+  Covers web, mobile web, H5, mini programs, Flutter, iOS and Android. Ships tokens, a CSS kit, a build-verified
+  Flutter kit, page templates, in-game parts, platform guides and screenshots. Uses no game assets and no official fonts.
 license: MIT
 ---
 
