@@ -16,6 +16,7 @@
 
 ```sh
 npx skills add vemiy/reverse1999-ui-skill
+npx skills add vemiy/reverse1999-ui-skill -g -y   # 全局安装并跳过确认
 npx skills add vemiy/reverse1999-ui-skill -a codex   # 只装给某一个 agent
 ```
 

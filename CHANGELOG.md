@@ -1,5 +1,10 @@
 # 变更记录
 
+## 1.0.2 — 2026-10-19
+
+- 修复 `SKILL.md` 头部的 YAML 解析错误：`description` 里的冒号未加引号，严格的解析器会拒绝加载，导致 `npx skills add` 找不到技能。改为折叠块标量。
+- 已用 `npx skills add vemiy/reverse1999-ui-skill -g -a claude-code -y --copy` 实测安装成功（107 个文件）。
+
 ## 1.0.1 — 2026-10-19
 
 - 合并 10 组重复选择器，每条规则只定义一次。

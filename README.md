@@ -16,6 +16,7 @@ The repository follows the Agent Skills layout: `SKILL.md` sits at the root and 
 
 ```sh
 npx skills add vemiy/reverse1999-ui-skill
+npx skills add vemiy/reverse1999-ui-skill -g -y   # install globally without prompts
 npx skills add vemiy/reverse1999-ui-skill -a codex   # install for one agent only
 ```
 
