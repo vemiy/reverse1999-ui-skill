@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark" data-accent="rust" data-density="standard" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0a09">
+<title>邮件 · 夜航档案室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..700;1,400..600&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reverse1999.css">
+<link rel="stylesheet" href="../assets/mail.css">
+</head>
+<body class="r99">
+
+<div class="r99-atmos" aria-hidden="true"></div>
+<div class="r99-rain" aria-hidden="true"></div>
+<div class="r99-grain" aria-hidden="true"></div>
+<div class="r99-vignette" aria-hidden="true"></div>
+
+<a class="r99-skip" href="#main">跳到正文</a>
+
+<header class="r99-mail__bar">
+  <div class="r99-shell r99-mail__bar-inner">
+    <a class="r99-mail__back" href="library.html" aria-label="返回档案库">
+      <svg viewBox="0 0 30 26" fill="none" aria-hidden="true" focusable="false">
+        <path d="M11 2.5 1.5 13 11 23.5" stroke="currentColor" stroke-width="1.2"></path>
+        <path d="M1.5 13H29" stroke="currentColor" stroke-width="1.2"></path>
+      </svg>
+      <span>
+        <span class="r99-mail__back-zh">返回</span>
+        <span class="r99-mail__back-en">Back</span>
+      </span>
+    </a>
+
+    <div class="r99-mail__ident">
+      <span class="r99-kicker r99-kicker--accent">Correspondence</span>
+      <h1 class="r99-mail__title">
+        <span class="r99-mail__title-zh">邮件</span>
+        <span class="r99-mail__title-en">Mail</span>
+      </h1>
+    </div>
+
+    <div class="r99-mail__bulk">
+      <span class="r99-mail__total">邮件 <b>5</b> / <b>100</b></span>
+      <button class="r99-btn" type="button" data-r99-toast="已删除 2 封已读邮件（示例）">删除已读<span class="r99-btn__en">Delete</span></button>
+      <button class="r99-btn r99-btn--primary" type="button" data-r99-toast="已领取全部附件（示例）">全部领取<span class="r99-btn__en">Claim all</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="r99-main">
+  <div class="r99-shell">
+    <div class="r99-mail">
+
+      <section class="r99-mail__listpane" aria-labelledby="inbox-title">
+        <div class="r99-mail__listhead">
+          <div>
+            <span class="r99-kicker">Inbox</span>
+            <h2 class="r99-h3" id="inbox-title">收件箱</h2>
+          </div>
+          <span class="r99-mail__listcount"><b>5</b><span class="r99-mail__listcount-en">Letters</span></span>
+        </div>
+        <div class="r99-mail__dots" aria-hidden="true"></div>
+
+        <ul class="r99-mail__list">
+          <li>
+            <a class="r99-mail__item" href="#m-2114" data-mail-link aria-current="true">
+              <span class="r99-mail__mark" aria-hidden="true"></span>
+              <span class="r99-mail__item-top">
+                <span class="r99-mail__from">西区档案分馆</span>
+                <time class="r99-mail__date" datetime="1999-12-31">1999.12.31</time>
+              </span>
+              <span class="r99-mail__subject">十二月封存清单</span>
+              <span class="r99-mail__ref">ARC-2114</span>
+            </a>
+          </li>
+          <li>
+            <a class="r99-mail__item r99-mail__item--unread" href="#m-2113" data-mail-link>
+              <span class="r99-mail__mark r99-unread" aria-hidden="true"></span>
+              <span class="r99-mail__item-top">
+                <span class="r99-mail__from">钟表校准处</span>
+                <time class="r99-mail__date" datetime="1999-12-30">1999.12.30</time>
+              </span>
+              <span class="r99-mail__subject">钟楼报时记录补录<span class="r99-hide">（未读）</span></span>
+              <span class="r99-mail__ref">ARC-2113</span>
+            </a>
+          </li>
+          <li>
+            <a class="r99-mail__item r99-mail__item--unread" href="#m-2111" data-mail-link>
+              <span class="r99-mail__mark r99-unread" aria-hidden="true"></span>
+              <span class="r99-mail__item-top">
+                <span class="r99-mail__from">印刷所</span>
+                <time class="r99-mail__date" datetime="1999-12-28">1999.12.28</time>
+              </span>
+              <span class="r99-mail__subject">铅字字模归还提醒<span class="r99-hide">（未读）</span></span>
+              <span class="r99-mail__ref">ARC-2111</span>
+            </a>
+          </li>
+          <li>
+            <a class="r99-mail__item" href="#m-2108" data-mail-link>
+              <span class="r99-mail__mark" aria-hidden="true"></span>
+              <span class="r99-mail__item-top">
+                <span class="r99-mail__from">气象观测站</span>
+                <time class="r99-mail__date" datetime="1999-12-24">1999.12.24</time>
+              </span>
+              <span class="r99-mail__subject">东区积水深度复测</span>
+              <span class="r99-mail__ref">ARC-2108</span>
+            </a>
+          </li>
+          <li>
+            <a class="r99-mail__item r99-mail__item--unread" href="#m-2103" data-mail-link>
+              <span class="r99-mail__mark r99-unread" aria-hidden="true"></span>
+              <span class="r99-mail__item-top">
+                <span class="r99-mail__from">典藏组</span>
+                <time class="r99-mail__date" datetime="1999-12-19">1999.12.19</time>
+              </span>
+              <span class="r99-mail__subject">借阅凭条已核销<span class="r99-hide">（未读）</span></span>
+              <span class="r99-mail__ref">ARC-2103</span>
+            </a>
+          </li>
+        </ul>
+
+        <footer class="r99-mail__listfoot">
+          <div class="r99-mail__stats">
+            <span>邮件数量 <b>5 / 100</b></span>
+            <span>未读邮件 <b>3</b></span>
+          </div>
+          <p class="r99-note">超出邮件上限时，自动删除最早的邮件。</p>
+        </footer>
+      </section>
+
+      <section class="r99-mail__readpane" aria-label="邮件正文">
+        <article class="r99-panel r99-panel--paper r99-mail__read" id="m-2114" data-mail-pane aria-labelledby="m-2114-title">
+          <header class="r99-mail__readhead">
+            <div class="r99-mail__readtop">
+              <span class="r99-kicker r99-kicker--accent">Letter</span>
+              <span class="r99-mail__badge r99-cut" aria-hidden="true">Archive copy</span>
+            </div>
+            <h2 class="r99-mail__subject-lg" id="m-2114-title">十二月封存清单</h2>
+            <div class="r99-meta r99-mail__meta">
+              <span>发件 · 西区档案分馆</span>
+              <time datetime="1999-12-31">1999.12.31</time>
+              <span>编号 ARC-2114</span>
+            </div>
+          </header>
+          <div class="r99-mail__body">
+            <p>西区各分馆的十二月封存清单已核对完毕，共 42 卷，其中 3 卷因受潮转入修复室。清单副本随邮件附上，请典藏组在 1999.12.31 前完成签收。</p>
+            <p>另：编号 ARC-2098 的借阅凭条尚未归还。若本周内仍未核销，将按封存条例第十二条转入待查册，并在下一期通报中列出。</p>
+            <p>签收后请将回执投入分馆二层的登记箱，不需要另行回信。</p>
+          </div>
+          <section class="r99-mail__attach" aria-labelledby="m-2114-att">
+            <span class="r99-mail__attach-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <path d="M5 2.5h9l5 5v14H5z" stroke="currentColor" stroke-width="1.1"></path>
+                <path d="M14 2.5v5h5M8 11h8M8 14.5h8M8 18h5" stroke="currentColor" stroke-width="1.1"></path>
+              </svg>
+            </span>
+            <div class="r99-mail__attach-text">
+              <h3 id="m-2114-att">附件 · 十二月封存清单（复印件）</h3>
+              <p>PDF · 2 页 · 0.4 MB</p>
+            </div>
+            <button class="r99-btn" type="button" data-r99-toast="已领取附件：十二月封存清单">领取<span class="r99-btn__en">Claim</span></button>
+          </section>
+          <footer class="r99-mail__sign">
+            <p class="r99-note">本邮件由档案室自动发送，请勿直接回复。</p>
+            <p class="r99-mail__signature">西区档案分馆 · 登记处<span>Registry office</span></p>
+          </footer>
+        </article>
+
+        <article class="r99-panel r99-panel--paper r99-mail__read" id="m-2113" data-mail-pane aria-labelledby="m-2113-title" hidden>
+          <header class="r99-mail__readhead">
+            <div class="r99-mail__readtop">
+              <span class="r99-kicker r99-kicker--accent">Letter</span>
+              <span class="r99-mail__badge r99-cut" aria-hidden="true">Archive copy</span>
+            </div>
+            <h2 class="r99-mail__subject-lg" id="m-2113-title">钟楼报时记录补录</h2>
+            <div class="r99-meta r99-mail__meta">
+              <span>发件 · 钟表校准处</span>
+              <time datetime="1999-12-30">1999.12.30</time>
+              <span>编号 ARC-2113</span>
+            </div>
+          </header>
+          <div class="r99-mail__body">
+            <p>十二月三十日的报时记录缺 18:00 一班。值班员已在现场核对齿轮刻度，补录值为 17:58:40，误差 80 秒。</p>
+            <p>补录页需要两名经手人签字，请在收到邮件后回传扫描件。原件暂存钟楼值班室，保留至下月校准日。</p>
+          </div>
+          <section class="r99-mail__attach" aria-labelledby="m-2113-att">
+            <span class="r99-mail__attach-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <path d="M5 2.5h9l5 5v14H5z" stroke="currentColor" stroke-width="1.1"></path>
+                <path d="M14 2.5v5h5M8 11h8M8 14.5h8M8 18h5" stroke="currentColor" stroke-width="1.1"></path>
+              </svg>
+            </span>
+            <div class="r99-mail__attach-text">
+              <h3 id="m-2113-att">附件 · 钟楼报时补录页</h3>
+              <p>扫描件 · PDF · 1 页 · 0.2 MB</p>
+            </div>
+            <button class="r99-btn" type="button" data-r99-toast="已领取附件：钟楼报时补录页">领取<span class="r99-btn__en">Claim</span></button>
+          </section>
+          <footer class="r99-mail__sign">
+            <p class="r99-note">补录页签字后归入钟表校准卷宗。</p>
+            <p class="r99-mail__signature">钟表校准处 · 值班室<span>Calibration room</span></p>
+          </footer>
+        </article>
+
+        <article class="r99-panel r99-panel--paper r99-mail__read" id="m-2111" data-mail-pane aria-labelledby="m-2111-title" hidden>
+          <header class="r99-mail__readhead">
+            <div class="r99-mail__readtop">
+              <span class="r99-kicker r99-kicker--accent">Letter</span>
+              <span class="r99-mail__badge r99-cut" aria-hidden="true">Archive copy</span>
+            </div>
+            <h2 class="r99-mail__subject-lg" id="m-2111-title">铅字字模归还提醒</h2>
+            <div class="r99-meta r99-mail__meta">
+              <span>发件 · 印刷所</span>
+              <time datetime="1999-12-28">1999.12.28</time>
+              <span>编号 ARC-2111</span>
+            </div>
+          </header>
+          <div class="r99-mail__body">
+            <p>本月借出的 12 号铅字字模共 6 枚，归还期限为 1999.12.29。逾期未还的，印刷所将暂停下一次排印申请。</p>
+            <p>若字模已交回，请忽略本提醒；若遗失，请附情况说明并到印刷所登记，以便重新浇铸。</p>
+          </div>
+          <section class="r99-mail__attach" aria-labelledby="m-2111-att">
+            <span class="r99-mail__attach-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <path d="M5 2.5h9l5 5v14H5z" stroke="currentColor" stroke-width="1.1"></path>
+                <path d="M14 2.5v5h5M8 11h8M8 14.5h8M8 18h5" stroke="currentColor" stroke-width="1.1"></path>
+              </svg>
+            </span>
+            <div class="r99-mail__attach-text">
+              <h3 id="m-2111-att">附件 · 铅字字模借出登记表</h3>
+              <p>JPG · 1 张 · 0.8 MB</p>
+            </div>
+            <button class="r99-btn" type="button" data-r99-toast="已领取附件：铅字字模借出登记表">领取<span class="r99-btn__en">Claim</span></button>
+          </section>
+          <footer class="r99-mail__sign">
+            <p class="r99-note">归还时请当面点清枚数，不接受邮寄。</p>
+            <p class="r99-mail__signature">印刷所 · 排字间<span>Composing room</span></p>
+          </footer>
+        </article>
+
+        <article class="r99-panel r99-panel--paper r99-mail__read" id="m-2108" data-mail-pane aria-labelledby="m-2108-title" hidden>
+          <header class="r99-mail__readhead">
+            <div class="r99-mail__readtop">
+              <span class="r99-kicker r99-kicker--accent">Letter</span>
+              <span class="r99-mail__badge r99-cut" aria-hidden="true">Archive copy</span>
+            </div>
+            <h2 class="r99-mail__subject-lg" id="m-2108-title">东区积水深度复测</h2>
+            <div class="r99-meta r99-mail__meta">
+              <span>发件 · 气象观测站</span>
+              <time datetime="1999-12-24">1999.12.24</time>
+              <span>编号 ARC-2108</span>
+            </div>
+          </header>
+          <div class="r99-mail__body">
+            <p>东区排水沟复测于 12 月 24 日完成，最深 0.42 米，较上次下降 0.07 米。附图为三处测点的水位刻度。</p>
+            <p>建议在下一场降雨前清理 3 号测点上游的落叶堆积。清理记录请并入本卷宗的后续页，不再单独建档。</p>
+          </div>
+          <section class="r99-mail__attach" aria-labelledby="m-2108-att">
+            <span class="r99-mail__attach-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <path d="M5 2.5h9l5 5v14H5z" stroke="currentColor" stroke-width="1.1"></path>
+                <path d="M14 2.5v5h5M8 11h8M8 14.5h8M8 18h5" stroke="currentColor" stroke-width="1.1"></path>
+              </svg>
+            </span>
+            <div class="r99-mail__attach-text">
+              <h3 id="m-2108-att">附件 · 东区测点水位记录</h3>
+              <p>PDF · 3 页 · 0.6 MB</p>
+            </div>
+            <button class="r99-btn" type="button" data-r99-toast="已领取附件：东区测点水位记录">领取<span class="r99-btn__en">Claim</span></button>
+          </section>
+          <footer class="r99-mail__sign">
+            <p class="r99-note">下次复测定于 2000.01.07，遇雨顺延。</p>
+            <p class="r99-mail__signature">气象观测站 · 东区分站<span>East station</span></p>
+          </footer>
+        </article>
+
+        <article class="r99-panel r99-panel--paper r99-mail__read" id="m-2103" data-mail-pane aria-labelledby="m-2103-title" hidden>
+          <header class="r99-mail__readhead">
+            <div class="r99-mail__readtop">
+              <span class="r99-kicker r99-kicker--accent">Letter</span>
+              <span class="r99-mail__badge r99-cut" aria-hidden="true">Archive copy</span>
+            </div>
+            <h2 class="r99-mail__subject-lg" id="m-2103-title">借阅凭条已核销</h2>
+            <div class="r99-meta r99-mail__meta">
+              <span>发件 · 典藏组</span>
+              <time datetime="1999-12-19">1999.12.19</time>
+              <span>编号 ARC-2103</span>
+            </div>
+          </header>
+          <div class="r99-mail__body">
+            <p>ARC-2098 的借阅凭条已于 1999.12.19 核销，所借《雨幕路街区图》第三册完好归还，无缺页与批注。</p>
+            <p>该卷宗已恢复为可借阅状态，保留期限至 2000.01.31。如需再次调阅，请重新填写凭条。</p>
+          </div>
+          <section class="r99-mail__attach" aria-labelledby="m-2103-att">
+            <span class="r99-mail__attach-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <path d="M5 2.5h9l5 5v14H5z" stroke="currentColor" stroke-width="1.1"></path>
+                <path d="M14 2.5v5h5M8 11h8M8 14.5h8M8 18h5" stroke="currentColor" stroke-width="1.1"></path>
+              </svg>
+            </span>
+            <div class="r99-mail__attach-text">
+              <h3 id="m-2103-att">附件 · 借阅凭条存根</h3>
+              <p>JPG · 1 张 · 0.3 MB</p>
+            </div>
+            <button class="r99-btn" type="button" data-r99-toast="已领取附件：借阅凭条存根">领取<span class="r99-btn__en">Claim</span></button>
+          </section>
+          <footer class="r99-mail__sign">
+            <p class="r99-note">存根与凭条原件一并归入借阅册。</p>
+            <p class="r99-mail__signature">典藏组 · 借阅台<span>Reading desk</span></p>
+          </footer>
+        </article>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer class="r99-foot">
+  <div class="r99-shell">
+    <div class="r99-foot__row">
+      <span>夜航档案室 · 邮件室</span>
+      <span class="r99-num">1999 — 2026</span>
+      <span>所有内容为示例数据，仅用于展示这套界面风格。</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/fx.js"></script>
+<script>
+(function () {
+  "use strict";
+  var links = Array.prototype.slice.call(document.querySelectorAll("[data-mail-link]"));
+  var panes = Array.prototype.slice.call(document.querySelectorAll("[data-mail-pane]"));
+
+  function select(id, moveFocus) {
+    var pane = document.getElementById(id);
+    if (!pane) return;
+    panes.forEach(function (item) {
+      item.hidden = item !== pane;
+    });
+    links.forEach(function (link) {
+      if (link.getAttribute("href") === "#" + id) {
+        link.setAttribute("aria-current", "true");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+    if (moveFocus) {
+      var title = pane.querySelector("h2");
+      if (title) {
+        title.setAttribute("tabindex", "-1");
+        title.focus({ preventScroll: true });
+      }
+    }
+  }
+
+  links.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      var id = link.getAttribute("href").slice(1);
+      select(id, true);
+      if (window.history && history.replaceState) {
+        history.replaceState(null, "", "#" + id);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

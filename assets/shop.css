@@ -1,0 +1,716 @@
+/* 商城页：货币条、商品网格、购买面板。 */
+
+/* ---------- 顶栏 ---------- */
+
+.r99-shop__bar {
+  position: relative;
+  z-index: 4;
+  border-bottom: var(--r99-hair) solid var(--r99-line);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent);
+}
+
+.r99-shop__bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--r99-s4);
+  padding-block: var(--r99-s4);
+}
+
+.r99-shop__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  color: var(--r99-text-muted);
+  transition: color var(--r99-t-hover) ease;
+}
+
+.r99-shop__back:hover {
+  color: var(--r99-text);
+}
+
+.r99-shop__back svg {
+  flex: none;
+  width: 30px;
+  height: 26px;
+}
+
+.r99-shop__back-zh {
+  font-size: var(--r99-fs-small);
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+}
+
+.r99-shop__back-en {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--r99-display);
+  font-size: 8px;
+  line-height: 1.2;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: currentColor;
+  opacity: 0.7;
+}
+
+.r99-shop__ident {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  margin-right: auto;
+}
+
+.r99-shop__title {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+}
+
+.r99-shop__title-zh {
+  border-bottom: var(--r99-hair) solid var(--r99-accent);
+  padding-bottom: 2px;
+}
+
+.r99-shop__title-en {
+  font-family: var(--r99-display);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--r99-text-muted);
+}
+
+/* ---------- 货币条 ---------- */
+
+.r99-shop__wallet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--r99-s2);
+  min-width: 0;
+}
+
+.r99-shop__currency {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 7px 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border: var(--r99-hair) solid var(--r99-line-strong);
+  border-radius: 0;
+}
+
+.r99-shop__coin {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  color: var(--r99-accent);
+}
+
+.r99-shop__currency-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  line-height: 1.2;
+}
+
+.r99-shop__currency-zh {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--r99-text-muted);
+}
+
+.r99-shop__currency-en {
+  font-family: var(--r99-display);
+  font-size: 7.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--r99-text-muted);
+  opacity: 0.8;
+}
+
+.r99-shop__amount {
+  margin-left: var(--r99-s2);
+  font-family: var(--r99-display);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--r99-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.r99-shop__plus {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  color: var(--r99-text);
+  background: color-mix(in srgb, var(--r99-accent) 14%, transparent);
+  border: var(--r99-hair) solid var(--r99-accent);
+  border-radius: 0;
+  font-family: var(--r99-display);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  --r99-cut: 7px;
+  transition: filter var(--r99-t-hover) ease;
+}
+
+.r99-shop__plus:hover {
+  filter: brightness(0.97);
+}
+
+.r99-shop__plus:active {
+  filter: brightness(0.82);
+}
+
+/* ---------- 柜台分区 ---------- */
+
+.r99-shop__shelves {
+  --r99-shop-hit-h: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: var(--r99-s4);
+}
+
+.r99-shop__shelf {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  min-height: var(--r99-shop-hit-h);
+  padding: 12px 24px;
+  background: rgba(12, 10, 9, 0.55);
+  border: var(--r99-hair) solid transparent;
+  border-bottom-color: var(--r99-line);
+  border-radius: 0;
+  color: var(--r99-text);
+  transition:
+    filter var(--r99-t-hover) ease,
+    background-color var(--r99-t-hover) ease;
+}
+
+.r99-shop__shelf:hover {
+  filter: brightness(0.97);
+}
+
+.r99-shop__shelf[aria-current="page"] {
+  background: var(--r99-accent);
+  border-color: var(--r99-accent);
+  color: var(--r99-on-accent);
+}
+
+.r99-shop__shelf:focus-visible {
+  outline-offset: -3px;
+}
+
+.r99-shop__shelf-zh {
+  font-size: 15px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+
+.r99-shop__shelf-en {
+  font-family: var(--r99-display);
+  font-size: 8px;
+  line-height: 1.4;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* ---------- 主栅格 ---------- */
+
+.r99-shop__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: start;
+  gap: var(--r99-s5);
+  padding: var(--r99-s4) 0 var(--r99-s5);
+}
+
+.r99-shop__stock {
+  min-width: 0;
+}
+
+.r99-shop__stockhead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--r99-s2);
+  padding-bottom: var(--r99-s2);
+}
+
+.r99-shop__stockhead .r99-h2 {
+  margin-top: 2px;
+}
+
+.r99-shop__stocknote {
+  margin: 6px 0 0;
+}
+
+.r99-shop__stockcount {
+  margin-left: auto;
+  font-family: var(--r99-display);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--r99-text-muted);
+  white-space: nowrap;
+}
+
+.r99-shop__stockcount b {
+  margin-right: 4px;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--r99-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.r99-shop__dots {
+  height: 4px;
+  background-image: radial-gradient(var(--r99-line-strong) 1px, transparent 1px);
+  background-size: 6px 4px;
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+  opacity: 0.9;
+}
+
+/* ---------- 商品网格 ---------- */
+
+.r99-shop__grid {
+  --r99-shop-cell-w: 270px;
+  --r99-shop-cell-h: 292px;
+  --r99-shop-hit-w: 285px;
+  --r99-shop-hit-h: 45px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-content: start;
+  gap: var(--r99-s3);
+  margin: var(--r99-s3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.r99-shop__cell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: min(100%, var(--r99-shop-hit-w));
+  min-height: 0;
+  aspect-ratio: 270 / 292;
+  max-width: var(--r99-shop-cell-w);
+}
+
+
+.r99-shop__time svg {
+  flex: none;
+  width: 11px;
+  height: 11px;
+}
+
+.r99-shop__item {
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.r99-shop__item:hover {
+  filter: brightness(0.97);
+}
+
+.r99-shop__item:active {
+  filter: brightness(0.82);
+}
+
+.r99-shop__item[aria-pressed="true"] .r99-item__plate {
+  outline: var(--r99-hair) solid var(--r99-accent);
+  outline-offset: 3px;
+}
+
+.r99-shop__item .r99-item__plate {
+  border-color: var(--r99-line-strong);
+}
+
+.r99-shop__item .r99-item__count {
+  justify-content: space-between;
+  gap: 6px;
+  padding-inline: 8px;
+}
+
+.r99-shop__price {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  font-family: var(--r99-display);
+  font-size: 19px;
+  font-variant-numeric: tabular-nums;
+}
+
+.r99-shop__price svg {
+  flex: none;
+  width: 13px;
+  height: 13px;
+}
+
+.r99-shop__stock {
+  flex: none;
+  font-family: var(--r99-display);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 253, 245, 0.68);
+}
+
+.r99-shop__item .r99-item__name {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--r99-text);
+  overflow-wrap: anywhere;
+}
+
+.r99-shop__glyph {
+  color: rgba(255, 250, 240, 0.84);
+}
+
+/* ---------- 购买面板 ---------- */
+
+.r99-shop__buy {
+  --r99-shop-buy-w: 225px;
+  --r99-shop-buy-h: 126px;
+  position: sticky;
+  top: var(--r99-s4);
+  min-width: 0;
+  padding: var(--r99-s4);
+  border: var(--r99-hair) solid var(--r99-accent);
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--r99-ink);
+}
+
+.r99-shop__buy::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: var(--r99-hair) solid var(--r99-line);
+  background:
+    linear-gradient(var(--r99-accent), var(--r99-accent)) left top / 16px 1px no-repeat,
+    linear-gradient(var(--r99-accent), var(--r99-accent)) left top / 1px 16px no-repeat,
+    linear-gradient(var(--r99-line-strong), var(--r99-line-strong)) right bottom / 16px 1px no-repeat,
+    linear-gradient(var(--r99-line-strong), var(--r99-line-strong)) right bottom / 1px 16px no-repeat;
+  pointer-events: none;
+}
+
+.r99-shop__buyhead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--r99-s2);
+}
+
+.r99-shop__limit {
+  flex: none;
+  padding: 3px 9px;
+  font-family: var(--r99-display);
+  font-size: 8px;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--r99-accent);
+  border: var(--r99-hair) solid var(--r99-accent);
+  border-radius: 0;
+  --r99-cut: 7px;
+}
+
+.r99-shop__buyname {
+  margin: 6px 0 2px;
+  font-size: 26px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.r99-shop__buymeta {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--r99-ink-muted);
+}
+
+.r99-shop__rare {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--r99-s2);
+  font-family: var(--r99-display);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--r99-ink-muted);
+}
+
+.r99-shop__rare::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--r99-rare, var(--r99-settled));
+}
+
+.r99-shop__buy .r99-shop__dots {
+  margin: var(--r99-s3) 0;
+}
+
+.r99-shop__unit {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--r99-s2);
+  padding-bottom: var(--r99-s2);
+  border-bottom: var(--r99-hair) solid var(--r99-line);
+}
+
+.r99-shop__unit-label,
+.r99-shop__qty-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  color: var(--r99-ink-muted);
+}
+
+.r99-shop__unit-label span,
+.r99-shop__qty-label span {
+  font-family: var(--r99-display);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.r99-shop__unit-value {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--r99-ink);
+}
+
+.r99-shop__unit-value svg {
+  align-self: center;
+  width: 18px;
+  height: 18px;
+  color: var(--r99-accent);
+}
+
+.r99-shop__unit-value b {
+  font-family: var(--r99-display);
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.r99-shop__unit-value span {
+  font-size: 11px;
+  color: var(--r99-ink-muted);
+}
+
+.r99-shop__qty {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--r99-s2);
+  padding: var(--r99-s3) 0;
+}
+
+.r99-shop__stepper {
+  display: flex;
+  align-items: stretch;
+  border: var(--r99-hair) solid var(--r99-line-strong);
+  border-radius: 0;
+}
+
+.r99-shop__step {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  font-family: var(--r99-display);
+  font-size: 20px;
+  line-height: 1;
+  color: var(--r99-ink);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  transition: filter var(--r99-t-hover) ease;
+}
+
+.r99-shop__step:hover {
+  filter: brightness(0.97);
+}
+
+.r99-shop__step:active {
+  filter: brightness(0.82);
+}
+
+.r99-shop__step[disabled] {
+  color: var(--r99-settled);
+  cursor: not-allowed;
+  filter: none;
+}
+
+.r99-shop__qty-value {
+  display: grid;
+  place-items: center;
+  min-width: 46px;
+  padding: 0 8px;
+  font-family: var(--r99-display);
+  font-size: 20px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--r99-ink);
+  border-left: var(--r99-hair) solid var(--r99-line-strong);
+  border-right: var(--r99-hair) solid var(--r99-line-strong);
+}
+
+.r99-shop__total {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--r99-s2);
+  padding: var(--r99-s2) 0 var(--r99-s3);
+  border-top: var(--r99-hair) solid var(--r99-line-strong);
+}
+
+.r99-shop__total > span:first-child {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--r99-ink-muted);
+}
+
+.r99-shop__total > span:first-child span {
+  display: block;
+  margin-top: 1px;
+  font-family: var(--r99-display);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.r99-shop__total > span:last-child {
+  font-size: 11px;
+  color: var(--r99-ink-muted);
+}
+
+.r99-shop__total b {
+  margin-right: 4px;
+  font-family: var(--r99-display);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--r99-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.r99-shop__confirm {
+  width: 100%;
+  max-width: var(--r99-shop-buy-w);
+  height: var(--r99-shop-buy-h);
+}
+
+.r99-shop__fine {
+  margin: var(--r99-s2) 0 0;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* ---------- 响应式 ---------- */
+
+@media (max-width: 1024px) {
+  .r99-shop__layout {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: var(--r99-s4);
+  }
+}
+
+@media (max-width: 900px) {
+  .r99-shop__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .r99-shop__buy {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .r99-shop__title {
+    font-size: 28px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .r99-shop__bar-inner {
+    align-items: flex-start;
+    gap: var(--r99-s3);
+  }
+  .r99-shop__ident {
+    margin-right: 0;
+  }
+  .r99-shop__wallet {
+    flex: 1 1 100%;
+  }
+  .r99-shop__currency {
+    flex: 1 1 100%;
+  }
+  .r99-shop__amount {
+    margin-left: auto;
+  }
+  .r99-shop__shelves {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .r99-shop__shelf {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+  }
+  .r99-shop__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--r99-s2);
+  }
+  .r99-shop__stockhead .r99-h2 {
+    font-size: 26px;
+  }
+  .r99-shop__buy {
+    padding: var(--r99-s3);
+  }
+  .r99-shop__buy::before {
+    inset: 6px;
+  }
+}

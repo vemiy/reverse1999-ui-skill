@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark" data-accent="rust" data-density="standard" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>夜航档案室 · 加载界面</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..700;1,400..600&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reverse1999.css">
+<link rel="stylesheet" href="../assets/loading.css">
+</head>
+<body class="r99 ld-page">
+
+<div class="r99-atmos" aria-hidden="true"></div>
+<div class="r99-rain" aria-hidden="true"></div>
+<div class="r99-grain" aria-hidden="true"></div>
+<div class="r99-vignette" aria-hidden="true"></div>
+
+<main class="ld-stage" id="ld-stage">
+
+  <div class="ld-ground" aria-hidden="true">
+    <div class="ld-halftone"></div>
+    <div class="ld-door-wrap">
+      <div class="ld-door">
+        <svg viewBox="0 0 400 520" fill="none" aria-hidden="true" focusable="false">
+          <g stroke="currentColor" stroke-width="1">
+            <!-- 角花 -->
+            <path d="M6 34V6h28" opacity=".55"/>
+            <path d="M366 6h28v28" opacity=".55"/>
+            <path d="M394 486v28h-28" opacity=".55"/>
+            <path d="M34 514H6v-28" opacity=".55"/>
+
+            <!-- 虚线外拱、双层门拱 -->
+            <path d="M64 478V214a136 136 0 0 1 272 0v264" stroke-dasharray="1 11" opacity=".4"/>
+            <path d="M78 478V216a122 122 0 0 1 244 0v262"/>
+            <path d="M98 478V220a102 102 0 0 1 204 0v258"/>
+
+            <!-- 门缝与横档 -->
+            <path d="M200 118v360" opacity=".7"/>
+            <path d="M98 220h204" opacity=".6"/>
+            <path d="M98 227h204" opacity=".3"/>
+
+            <!-- 门槛 -->
+            <path d="M66 478h268"/>
+            <path d="M54 490h292" opacity=".5"/>
+            <path d="M42 502h316" opacity=".25"/>
+
+            <!-- 门扇切角 -->
+            <path d="M114 320l18-18h54v160h-72z" opacity=".75"/>
+            <path d="M124 326l13-13h39v139h-52z" opacity=".45"/>
+            <path d="M286 320l-18-18h-54v160h72z" opacity=".75"/>
+            <path d="M276 326l-13-13h-39v139h52z" opacity=".45"/>
+
+            <!-- 门把 -->
+            <path d="M187 384h26v30h-26z" opacity=".8"/>
+            <path d="M200 390v18" opacity=".6"/>
+            <path d="M194 399h12" opacity=".6"/>
+
+            <!-- 顶部刻度 -->
+            <path d="M186 74h28" opacity=".35"/>
+            <path d="M192 66h16" opacity=".2"/>
+          </g>
+          <path class="ld-door__accent" d="M200 58v36"/>
+          <path class="ld-door__accent" d="M200 52l7 7-7 7-7-7z"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <header class="ld-top">
+    <p class="ld-scene ld-eyebrow ld-anim-fade is-on" data-scene="load">
+      <span>ARCHIVE</span>
+      <span class="ld-eyebrow__slash" aria-hidden="true">/</span>
+      <span class="ld-eyebrow__mode">LOADING</span>
+      <span class="ld-eyebrow__no">04</span>
+    </p>
+    <p class="ld-scene ld-eyebrow ld-anim-fade" data-scene="return">
+      <span>ARCHIVE</span>
+      <span class="ld-eyebrow__slash" aria-hidden="true">/</span>
+      <span class="ld-eyebrow__mode">RETURNING</span>
+      <span class="ld-eyebrow__no">11</span>
+    </p>
+
+    <div class="ld-switch" role="group" aria-label="切换加载样张">
+      <button class="ld-switch__btn" type="button" data-ld-state="load" aria-pressed="true">调取</button>
+      <button class="ld-switch__btn" type="button" data-ld-state="return" aria-pressed="false">归还</button>
+    </div>
+  </header>
+
+  <div class="ld-scene ld-center ld-anim-fade is-on" data-scene="load">
+    <p class="ld-kicker">RECORD 04 · RETRIEVAL</p>
+    <h1 class="ld-title ld-anim-rise ld-d1">夜航档案室</h1>
+    <p class="ld-en ld-anim-fade ld-d2">THE NIGHT ARCHIVE</p>
+    <p class="ld-sub ld-anim-fade ld-d2">雨幕路 1999 号 · 第 04 号卷宗正在调取</p>
+    <p class="ld-record ld-anim-fade ld-d3">
+      <span class="ld-record__label">RECORD</span>
+      <span class="ld-record__no">N-0421</span>
+    </p>
+  </div>
+
+  <div class="ld-scene ld-center" data-scene="return">
+    <p class="ld-kicker">BATCH 11 · RE-ENTRY</p>
+    <h1 class="ld-title ld-anim-rise ld-d1">返回档案室</h1>
+    <p class="ld-en ld-anim-fade ld-d2">RETURN TO ARCHIVE</p>
+    <p class="ld-sub ld-anim-fade ld-d2">第 11 批归还卷宗已到门厅，正在核验</p>
+    <p class="ld-record ld-anim-fade ld-d3">
+      <span class="ld-record__label">RECORD</span>
+      <span class="ld-record__no">N-0409</span>
+    </p>
+  </div>
+
+  <footer class="ld-scene ld-bottom is-on" data-scene="load">
+    <div class="ld-status ld-anim-rise ld-d2">
+      <div class="ld-status__head">
+        <span class="ld-status__text">正在调取卷宗…</span>
+        <span class="ld-status__count">47 / 100</span>
+      </div>
+      <div class="ld-progress" role="progressbar" aria-label="卷宗调取进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="47">
+        <span class="ld-progress__fill"></span>
+      </div>
+      <p class="ld-status__meta">卷宗 N-0421 · 第 04 次调取 · 值夜馆员</p>
+    </div>
+    <blockquote class="ld-quote ld-anim-rise ld-d3">
+      <p>「雨落在铁皮屋顶上，像有人替整座城翻页。」</p>
+      <cite>摘录 04 · 馆员手记 第四卷</cite>
+    </blockquote>
+  </footer>
+
+  <footer class="ld-scene ld-bottom" data-scene="return">
+    <div class="ld-status ld-anim-rise ld-d2">
+      <div class="ld-status__head">
+        <span class="ld-status__text">正在核验归还的卷宗…</span>
+        <span class="ld-status__count">72 / 100</span>
+      </div>
+      <div class="ld-progress" role="progressbar" aria-label="卷宗归还进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="72">
+        <span class="ld-progress__fill"></span>
+      </div>
+      <p class="ld-status__meta">卷宗 N-0409 · 第 11 批归还 · 值夜馆员</p>
+    </div>
+    <blockquote class="ld-quote ld-anim-rise ld-d3">
+      <p>「门在身后合上，记录才算真正开始。」</p>
+      <cite>摘录 11 · 馆员手记 第九卷</cite>
+    </blockquote>
+  </footer>
+
+  <span class="ld-side" aria-hidden="true">Night Archive · 1999</span>
+
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  var stage = document.getElementById("ld-stage");
+  if (!stage) return;
+
+  var buttons = Array.prototype.slice.call(stage.querySelectorAll("[data-ld-state]"));
+  var scenes = Array.prototype.slice.call(stage.querySelectorAll(".ld-scene"));
+
+  function apply(state) {
+    var returning = state === "return";
+    stage.classList.toggle("is-return", returning);
+    scenes.forEach(function (scene) {
+      var on = scene.getAttribute("data-scene") === state;
+      scene.classList.toggle("is-on", on);
+    });
+    buttons.forEach(function (btn) {
+      btn.setAttribute("aria-pressed", String(btn.getAttribute("data-ld-state") === state));
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      apply(btn.getAttribute("data-ld-state"));
+    });
+  });
+
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("state") === "return" || window.location.hash === "#return") {
+    apply("return");
+  }
+})();
+</script>
+</body>
+</html>

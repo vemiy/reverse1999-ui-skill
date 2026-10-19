@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="雨幕中的钟楼剪影">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#24343d"/>
+      <stop offset="0.55" stop-color="#16212a"/>
+      <stop offset="1" stop-color="#0a0d10"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="0.72" cy="0.62" r="0.42">
+      <stop offset="0" stop-color="#c97a2b" stop-opacity="0.55"/>
+      <stop offset="0.45" stop-color="#8a4a1f" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#0a0d10" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cold" cx="0.2" cy="0.18" r="0.5">
+      <stop offset="0" stop-color="#5d7f8c" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#0a0d10" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="rain" width="120" height="46" patternUnits="userSpaceOnUse" patternTransform="rotate(8)">
+      <line x1="12" y1="0" x2="12" y2="46" stroke="#cfe1e6" stroke-opacity="0.10" stroke-width="1"/>
+      <line x1="58" y1="0" x2="58" y2="46" stroke="#cfe1e6" stroke-opacity="0.06" stroke-width="1"/>
+      <line x1="96" y1="0" x2="96" y2="46" stroke="#cfe1e6" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+    <pattern id="rainBig" width="260" height="130" patternUnits="userSpaceOnUse" patternTransform="rotate(8)">
+      <line x1="30" y1="0" x2="30" y2="130" stroke="#e7f1f3" stroke-opacity="0.09" stroke-width="2"/>
+      <line x1="170" y1="0" x2="170" y2="130" stroke="#e7f1f3" stroke-opacity="0.07" stroke-width="2"/>
+    </pattern>
+    <filter id="fog" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <linearGradient id="fadeBottom" x1="0" y1="0.55" x2="0" y2="1">
+      <stop offset="0" stop-color="#070606" stop-opacity="0"/>
+      <stop offset="1" stop-color="#070606" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#cold)"/>
+  <rect width="1600" height="900" fill="url(#lamp)"/>
+
+  <!-- 远景楼群 -->
+  <g fill="#080b0d" opacity="0.85">
+    <rect x="0" y="620" width="120" height="280"/>
+    <rect x="110" y="660" width="90" height="240"/>
+    <rect x="880" y="640" width="130" height="260"/>
+    <rect x="1000" y="600" width="70" height="300"/>
+    <rect x="1450" y="640" width="150" height="260"/>
+    <rect x="1380" y="690" width="80" height="210"/>
+  </g>
+
+  <!-- 钟楼 -->
+  <g>
+    <path d="M700 330 L740 240 L780 330 Z" fill="#0b0f12"/>
+    <rect x="702" y="330" width="76" height="90" fill="#0b0f12"/>
+    <circle cx="740" cy="300" r="15" fill="#d9c9a8" opacity="0.55"/>
+    <circle cx="740" cy="300" r="15" fill="none" stroke="#c97a2b" stroke-opacity="0.55" stroke-width="1.5"/>
+    <path d="M740 290 L740 300 L748 304" stroke="#2a1c14" stroke-width="1.6" fill="none"/>
+    <rect x="672" y="418" width="136" height="70" fill="#0b0f12"/>
+    <path d="M712 488 L768 488 L754 900 L726 900 Z" fill="#0b0f12"/>
+    <path d="M676 428 L676 900 L704 900 L704 428 Z" fill="#0d1216" opacity="0.9"/>
+    <g fill="#c97a2b" opacity="0.35">
+      <rect x="734" y="520" width="4" height="16"/>
+      <rect x="734" y="580" width="4" height="16"/>
+      <rect x="734" y="640" width="4" height="16"/>
+    </g>
+  </g>
+
+  <!-- 玻璃上的雨 -->
+  <rect width="1600" height="900" fill="url(#rainBig)"/>
+  <rect width="1600" height="900" fill="url(#rain)"/>
+
+  <!-- 光晕与雾 -->
+  <ellipse cx="1120" cy="560" rx="260" ry="200" fill="#c97a2b" opacity="0.10" filter="url(#fog)"/>
+  <rect width="1600" height="900" fill="url(#fadeBottom)"/>
+
+  <!-- 颗粒 -->
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>

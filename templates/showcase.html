@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark" data-accent="rust" data-density="standard" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>夜航档案室 · 封面</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..700;1,400..600&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reverse1999.css">
+<style>
+  /* 仅本页：首屏高度与编排 */
+  .r99-hero--tall .r99-hero__inner { min-height: 78vh; }
+</style>
+</head>
+<body class="r99">
+
+<div class="r99-atmos" aria-hidden="true"></div>
+<div class="r99-rain" aria-hidden="true"></div>
+<div class="r99-grain" aria-hidden="true"></div>
+<div class="r99-vignette" aria-hidden="true"></div>
+
+<a class="r99-skip" href="#main">跳到正文</a>
+
+<header class="r99-masthead">
+  <div class="r99-shell r99-masthead__inner">
+    <a class="r99-logo" href="#">
+      <span class="r99-logo__zh">夜航档案室</span>
+      <span class="r99-logo__en">Night Archive</span>
+    </a>
+    <nav class="r99-nav" aria-label="主导航">
+      <a href="#index">索引</a>
+      <a href="#records">档案</a>
+      <a href="#gallery">展厅</a>
+      <a href="#service">服务</a>
+    </nav>
+    <div class="r99-actions" style="margin:0">
+      <button class="r99-btn r99-btn--quiet" data-r99-theme-toggle aria-pressed="false">
+        明暗<span class="r99-btn__en">Light</span>
+      </button>
+      <button class="r99-btn r99-btn--primary" data-r99-open="dlg-subscribe">
+        预约阅览<span class="r99-btn__en">Reserve</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="r99-main">
+
+  <!-- 首屏 -->
+  <section class="r99-hero r99-hero--tall">
+    <div class="r99-hero__media" aria-hidden="true">
+      <img src="../assets/art/scene-rain.svg" alt="">
+    </div>
+    <div class="r99-shell r99-hero__inner">
+      <div class="r99-hero__body">
+        <span class="r99-kicker r99-kicker--accent r99-fade" style="--d:80ms">Reverse Archive · Est. 1999</span>
+        <h1 class="r99-hero__title r99-in" style="--d:160ms">雨停之前<br>把旧世界存下来</h1>
+        <span class="r99-hero__en r99-fade" style="--d:260ms">The Night Archive</span>
+        <p class="r99-hero__lead r99-fade" style="--d:340ms">
+          一九九九年最后一天的记录、照片与口述，按卷宗编号归档。
+          每一份都可以按日期、地点与经手人查回来。
+        </p>
+        <div class="r99-actions r99-fade" style="--d:420ms">
+          <button class="r99-btn r99-btn--primary">开始检索<span class="r99-btn__en">Search</span></button>
+          <button class="r99-btn" data-r99-toast="已复制卷宗编号 N-0417">复制编号<span class="r99-btn__en">Copy</span></button>
+        </div>
+        <div class="r99-meta r99-fade" style="--d:500ms;margin-top:32px">
+          <span>卷宗 1,024</span>
+          <span>更新 1999.12.31</span>
+          <span class="r99-status r99-status--ok">对外开放</span>
+        </div>
+      </div>
+      <div class="r99-hero__rail" aria-hidden="true">
+        <span class="r99-side">Archive of the last day</span>
+        <span class="r99-hero__index">01</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 索引 -->
+  <section class="r99-section" id="index">
+    <div class="r99-shell">
+      <div class="r99-plate" data-r99-reveal>
+        <span class="r99-plate__no">01</span>
+        <span class="r99-plate__text">
+          <span class="r99-plate__en">Index</span>
+          <span class="r99-h2">三个入口</span>
+        </span>
+      </div>
+
+      <div class="r99-grid r99-grid--3">
+        <a class="r99-card" href="#" data-r99-reveal>
+          <div class="r99-card__media"><img src="../assets/art/plate-arch.svg" alt="拱门图案"></div>
+          <div class="r99-card__body">
+            <h3 class="r99-card__name">建筑与街景</h3>
+            <p class="r99-note">雨前的拱廊、剧院与钟楼，按街区编号排布。</p>
+            <div class="r99-meta" style="margin-top:12px"><span>268 份</span><span>1999.06 起</span></div>
+          </div>
+        </a>
+        <a class="r99-card" href="#" data-r99-reveal style="--d:80ms">
+          <div class="r99-card__media"><img src="../assets/art/plate-radio.svg" alt="电波图案"></div>
+          <div class="r99-card__body">
+            <h3 class="r99-card__name">电台与口述</h3>
+            <p class="r99-note">深夜频段的录音整理，附说话人、时长与频率。</p>
+            <div class="r99-meta" style="margin-top:12px"><span>412 份</span><span>88.9 MHz</span></div>
+          </div>
+        </a>
+        <a class="r99-card" href="#" data-r99-reveal style="--d:160ms">
+          <div class="r99-card__media"><img src="../assets/art/plate-clock.svg" alt="罗盘图案"></div>
+          <div class="r99-card__body">
+            <h3 class="r99-card__name">时间与天气</h3>
+            <p class="r99-note">暴雨前后的气象记录、钟表校准与日期争议。</p>
+            <div class="r99-meta" style="margin-top:12px"><span>344 份</span><span>逐日</span></div>
+          </div>
+        </a>
+      </div>
+      <ul class="r99-indicators" data-r99-indicators aria-label="索引页切换">
+        <li><button aria-current="true" aria-label="第一页"></button></li>
+        <li><button aria-current="false" aria-label="第二页"></button></li>
+        <li><button aria-current="false" aria-label="第三页"></button></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 档案 -->
+  <section class="r99-section" id="records">
+    <div class="r99-shell r99-grid r99-grid--split">
+      <div>
+        <div class="r99-plate" data-r99-reveal>
+          <span class="r99-plate__no">02</span>
+          <span class="r99-plate__text">
+            <span class="r99-plate__en">Records</span>
+            <span class="r99-h2">最近入档</span>
+          </span>
+        </div>
+
+        <ul class="r99-list" data-r99-reveal>
+          <li><a href="#">
+            <span class="r99-row__no">N-0421</span>
+            <span class="r99-row__date">1999.12.31</span>
+            <span class="r99-row__name">钟楼最后一次报时</span>
+            <span class="r99-status r99-status--ok">已归档</span>
+          </a></li>
+          <li><a href="#">
+            <span class="r99-row__no">N-0418</span>
+            <span class="r99-row__date">1999.12.30</span>
+            <span class="r99-row__name">东区积水深度记录</span>
+            <span class="r99-status r99-status--ok">已归档</span>
+          </a></li>
+          <li><a href="#">
+            <span class="r99-row__no">N-0417</span>
+            <span class="r99-row__date">1999.12.29</span>
+            <span class="r99-row__name">电台深夜频段中断</span>
+            <span class="r99-status r99-status--due">待核</span>
+          </a></li>
+          <li><a href="#">
+            <span class="r99-row__no">N-0409</span>
+            <span class="r99-row__date">1999.12.24</span>
+            <span class="r99-row__name">剧院散场口述（三人）</span>
+            <span class="r99-status r99-status--ok">已归档</span>
+          </a></li>
+          <li><a href="#">
+            <span class="r99-row__no">N-0402</span>
+            <span class="r99-row__date">1999.12.17</span>
+            <span class="r99-row__name">雨具借用登记簿</span>
+            <span class="r99-status">已封存</span>
+          </a></li>
+        </ul>
+        <p class="r99-note" style="margin-top:16px">显示 1–5 条，共 1,024 条。编号一旦分配不再更改。</p>
+      </div>
+
+      <aside class="r99-panel r99-panel--paper" data-r99-reveal style="--d:100ms">
+        <span class="r99-kicker r99-kicker--accent">Reading room</span>
+        <h2 class="r99-h2" style="margin-top:8px">预约阅览室</h2>
+        <p class="r99-note" style="margin:12px 0 24px">
+          纸质原件只在工作日下午开放。留下邮箱，我们会把可预约的时段发给你。
+        </p>
+        <form class="r99-stack" onsubmit="event.preventDefault();window.r99.toast('已登记，确认邮件将在 1 个工作日内寄出');">
+          <label class="r99-label" for="mail">邮箱</label>
+          <input class="r99-input" id="mail" type="email" placeholder="name@example.com" required>
+          <button class="r99-btn r99-btn--primary r99-btn--block" type="submit" style="margin-top:16px">
+            登记<span class="r99-btn__en">Register</span>
+          </button>
+        </form>
+        <div style="display:flex;justify-content:space-between;align-items:end;margin-top:32px">
+          <span class="r99-stamp">Admit one</span>
+          <span class="r99-num" style="font-size:36px;color:var(--r99-accent)">1999</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 展厅 -->
+  <section class="r99-section" id="gallery">
+    <div class="r99-shell">
+      <div class="r99-plate" data-r99-reveal>
+        <span class="r99-plate__no">03</span>
+        <span class="r99-plate__text">
+          <span class="r99-plate__en">Gallery</span>
+          <span class="r99-h2">展厅</span>
+        </span>
+      </div>
+      <div class="r99-grid r99-grid--half">
+        <figure class="r99-figure" data-r99-reveal>
+          <img src="../assets/art/scene-rain.svg" alt="雨幕中的钟楼剪影">
+          <figcaption>展厅一 · 雨幕（复制品），1999 年冬</figcaption>
+        </figure>
+        <div class="r99-prose" data-r99-reveal style="--d:80ms">
+          <h2 class="r99-h2">一场雨的分寸</h2>
+          <p class="r99-dropcap">
+            档案室收藏的不是灾难，是灾难前后人们仍在过日子的证据。一张借伞登记、一段报时、一次散场，
+            比任何宏大叙述都更接近那个夜晚。
+          </p>
+          <blockquote class="r99-quote">
+            雨落在窗上，城市就变成一张底片。
+            <cite>—— 馆员手记，第 4 卷</cite>
+          </blockquote>
+          <p>所有展品均可申请复制。复制品带编号，不带原件上的污渍。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 服务 -->
+  <section class="r99-section" id="service">
+    <div class="r99-shell">
+      <div class="r99-plate" data-r99-reveal>
+        <span class="r99-plate__no">04</span>
+        <span class="r99-plate__text">
+          <span class="r99-plate__en">Service</span>
+          <span class="r99-h2">阅览与复制</span>
+        </span>
+      </div>
+      <table class="r99-table" data-r99-reveal>
+        <thead>
+          <tr><th scope="col">项目</th><th scope="col">编号</th><th scope="col">时长</th><th scope="col">费用</th><th scope="col">状态</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>普通阅览</td><td>SV-01</td><td>90 分钟</td><td>免费</td><td><span class="r99-status r99-status--ok">开放</span></td></tr>
+          <tr><td>原件调阅</td><td>SV-02</td><td>60 分钟</td><td>预约制</td><td><span class="r99-status r99-status--ok">开放</span></td></tr>
+          <tr><td>影像复制</td><td>SV-03</td><td>3 个工作日</td><td>按页计</td><td><span class="r99-status r99-status--due">排队 6 人</span></td></tr>
+          <tr><td>口述采访</td><td>SV-04</td><td>120 分钟</td><td>面议</td><td><span class="r99-status">暂停</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 收尾 -->
+  <section class="r99-section">
+    <div class="r99-shell">
+      <div class="r99-panel" data-r99-reveal style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px">
+        <div>
+          <span class="r99-kicker r99-kicker--accent">Before the rain stops</span>
+          <h2 class="r99-title" style="margin-top:12px">在雨停之前，<br>留下一份属于你的记录</h2>
+        </div>
+        <div class="r99-actions" style="margin:0">
+          <button class="r99-btn r99-btn--primary" data-r99-open="dlg-subscribe">预约阅览<span class="r99-btn__en">Reserve</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="r99-foot">
+  <div class="r99-shell">
+    <div class="r99-foot__row">
+      <span>夜航档案室 · 雨幕路 1999 号</span>
+      <span class="r99-num">1999 — 2026</span>
+      <span>所有内容为示例数据，仅用于展示这套界面风格。</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 提示弹窗 -->
+<div class="r99-notice" role="dialog" aria-modal="true" aria-labelledby="notice-title" id="dlg-subscribe" hidden>
+  <div class="r99-notice__head">
+    <svg class="r99-notice__arch" viewBox="0 0 46 24" aria-hidden="true"><path d="M2 23V10L23 2l21 8v13" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+    <h2 class="r99-notice__title" id="notice-title">提示</h2>
+    <span class="r99-notice__en">NOTICE</span>
+  </div>
+  <div class="r99-notice__body">是否提交阅览预约？</div>
+  <div class="r99-notice__actions">
+    <button class="r99-notice__btn" data-r99-close>取消<span>Cancel</span></button>
+    <button class="r99-notice__btn r99-notice__btn--primary" data-r99-close data-r99-toast="已提交，请查收确认邮件">确认<span>Confirm</span></button>
+  </div>
+</div>
+<script src="../assets/variant.js"></script>
+<script src="../assets/fx.js"></script>
+</body>
+</html>

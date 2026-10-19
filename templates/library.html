@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark" data-accent="rust" data-density="standard" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>档案库 · 夜航档案室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..700;1,400..600&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reverse1999.css">
+</head>
+<body class="r99">
+
+<div class="r99-atmos" aria-hidden="true"></div>
+<div class="r99-rain" aria-hidden="true"></div>
+<div class="r99-grain" aria-hidden="true"></div>
+<div class="r99-vignette" aria-hidden="true"></div>
+
+<a class="r99-skip" href="#main">跳到正文</a>
+
+<header class="r99-masthead">
+  <div class="r99-shell r99-masthead__inner">
+    <a class="r99-logo" href="showcase.html">
+      <span class="r99-logo__zh">夜航档案室</span>
+      <span class="r99-logo__en">Night Archive</span>
+    </a>
+    <nav class="r99-nav" aria-label="主导航">
+      <a href="showcase.html#index">索引</a>
+      <a href="library.html" aria-current="page">档案</a>
+      <a href="showcase.html#gallery">展厅</a>
+      <a href="showcase.html#service">服务</a>
+    </nav>
+    <div class="r99-actions" style="margin:0">
+      <button class="r99-btn r99-btn--quiet" data-r99-theme-toggle aria-pressed="false">明暗<span class="r99-btn__en">Light</span></button>
+      <button class="r99-btn r99-btn--primary" data-r99-toast="检索条件已保存">保存检索<span class="r99-btn__en">Save</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="r99-main">
+  <div class="r99-shell">
+
+    <section style="padding:var(--r99-s5) 0 var(--r99-s4);border-bottom:var(--r99-hair) solid var(--r99-line)">
+      <span class="r99-kicker r99-kicker--accent">Library</span>
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-top:12px">
+        <div>
+          <h1 class="r99-title">档案库</h1>
+          <p class="r99-note" style="margin-top:8px">共 1,024 份。编号一旦分配不再更改，撤销的卷宗保留编号并标注「已封存」。</p>
+        </div>
+        <nav class="r99-search" style="min-width:280px" aria-label="检索">
+          <span class="r99-kicker" style="letter-spacing:.2em">Search</span>
+          <input type="search" placeholder="编号、标题或经手人" aria-label="检索档案">
+        </nav>
+      </div>
+    </section>
+
+    <section style="padding:var(--r99-s4) 0">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+        <div style="display:flex;flex-wrap:wrap;gap:8px" role="group" aria-label="按类别筛选">
+          <button class="r99-chip r99-chip--on" data-r99-toast="已筛选：全部">全部 <span class="r99-num">1,024</span></button>
+          <button class="r99-chip">时间与天气 <span class="r99-num">344</span></button>
+          <button class="r99-chip">电台与口述 <span class="r99-num">412</span></button>
+          <button class="r99-chip">建筑与街景 <span class="r99-num">268</span></button>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <span class="r99-note">按入档日期排序</span>
+          <span class="r99-badge">已核 98%</span>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="档案列表" style="padding-bottom:var(--r99-s4)">
+      <div class="r99-grid r99-grid--4">
+        <a class="r99-card" href="reading.html" data-r99-reveal>
+          <div class="r99-card__media"><img src="../assets/art/plate-clock.svg" alt="罗盘图案"></div>
+          <div class="r99-card__body">
+            <div class="r99-meta" style="margin-bottom:8px"><span class="r99-row__no">N-0421</span><span>1999.12.31</span></div>
+            <h3 class="r99-card__name" style="font-size:16px">钟楼最后一次报时</h3>
+            <span class="r99-status r99-status--ok" style="margin-top:8px">已归档</span>
+          </div>
+        </a>
+        <a class="r99-card" href="#" data-r99-reveal style="--d:60ms">
+          <div class="r99-card__media"><img src="../assets/art/scene-rain.svg" alt="雨幕中的城市"></div>
+          <div class="r99-card__body">
+            <div class="r99-meta" style="margin-bottom:8px"><span class="r99-row__no">N-0418</span><span>1999.12.30</span></div>
+            <h3 class="r99-card__name" style="font-size:16px">东区积水深度记录</h3>
+            <span class="r99-status r99-status--ok" style="margin-top:8px">已归档</span>
+          </div>
+        </a>
+        <a class="r99-card" href="#" data-r99-reveal style="--d:120ms">
+          <div class="r99-card__media"><img src="../assets/art/plate-radio.svg" alt="电波图案"></div>
+          <div class="r99-card__body">
+            <div class="r99-meta" style="margin-bottom:8px"><span class="r99-row__no">N-0417</span><span>1999.12.29</span></div>
+            <h3 class="r99-card__name" style="font-size:16px">电台深夜频段中断</h3>
+            <span class="r99-status r99-status--due" style="margin-top:8px">待核</span>
+          </div>
+        </a>
+        <a class="r99-card" href="#" data-r99-reveal style="--d:180ms">
+          <div class="r99-card__media"><img src="../assets/art/plate-arch.svg" alt="拱门图案"></div>
+          <div class="r99-card__body">
+            <div class="r99-meta" style="margin-bottom:8px"><span class="r99-row__no">N-0409</span><span>1999.12.24</span></div>
+            <h3 class="r99-card__name" style="font-size:16px">剧院散场口述（三人）</h3>
+            <span class="r99-status r99-status--ok" style="margin-top:8px">已归档</span>
+          </div>
+        </a>
+        <a class="r99-card" href="#" data-r99-reveal>
+          <div class="r99-card__media"><img src="../assets/art/plate-arch.svg" alt="拱门图案"></div>
+          <div class="r99-card__body">
+            <div class="r99-meta" style="margin-bottom:8px"><span class="r99-row__no">N-0402</span><span>1999.12.17</span></div>
+            <h3 class="r99-card__name" style="font-size:16px">雨具借用登记簿</h3>
+            <span class="r99-status" style="margin-top:8px">已封存</span>
+          </div>
+        </a>
+        <a class="r99-card" href="#" data-r99-reveal style="--d:60ms">
+          <div class="r99-card__media"><img src="../assets/art/plate-radio.svg" alt="电波图案"></div>
+          <div class="r99-card__body">
+            <div class="r99-meta" style="margin-bottom:8px"><span class="r99-row__no">N-0398</span><span>1999.12.11</span></div>
+            <h3 class="r99-card__name" style="font-size:16px">夜间航班录音残片</h3>
+            <span class="r99-status r99-status--ok" style="margin-top:8px">已归档</span>
+          </div>
+        </a>
+        <a class="r99-card" href="#" data-r99-reveal style="--d:120ms">
+          <div class="r99-card__media"><img src="../assets/art/plate-clock.svg" alt="罗盘图案"></div>
+          <div class="r99-card__body">
+            <div class="r99-meta" style="margin-bottom:8px"><span class="r99-row__no">N-0391</span><span>1999.12.03</span></div>
+            <h3 class="r99-card__name" style="font-size:16px">钟表校准单（十二月）</h3>
+            <span class="r99-status r99-status--ok" style="margin-top:8px">已归档</span>
+          </div>
+        </a>
+        <a class="r99-card" href="#" data-r99-reveal style="--d:180ms">
+          <div class="r99-card__media"><img src="../assets/art/scene-rain.svg" alt="雨幕中的城市"></div>
+          <div class="r99-card__body">
+            <div class="r99-meta" style="margin-bottom:8px"><span class="r99-row__no">N-0388</span><span>1999.11.28</span></div>
+            <h3 class="r99-card__name" style="font-size:16px">西区排水沟施工图</h3>
+            <span class="r99-status" style="margin-top:8px">已封存</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <nav aria-label="分页" style="display:flex;align-items:center;justify-content:space-between;padding:var(--r99-s4) 0;border-top:var(--r99-hair) solid var(--r99-line)">
+      <span class="r99-note">第 1–8 条，共 1,024 条</span>
+      <div style="display:flex;gap:8px">
+        <button class="r99-btn" disabled>上一页</button>
+        <button class="r99-btn r99-btn--primary">下一页<span class="r99-btn__en">Next</span></button>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<footer class="r99-foot">
+  <div class="r99-shell">
+    <div class="r99-foot__row">
+      <span>夜航档案室 · 雨幕路 1999 号</span>
+      <span class="r99-num">1999 — 2026</span>
+      <span>所有内容为示例数据，仅用于展示这套界面风格。</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/variant.js"></script>
+<script src="../assets/fx.js"></script>
+</body>
+</html>

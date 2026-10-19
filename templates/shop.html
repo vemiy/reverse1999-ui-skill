@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark" data-accent="rust" data-density="standard" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0a09">
+<title>商城 · 夜航档案室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..700;1,400..600&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reverse1999.css">
+<link rel="stylesheet" href="../assets/shop.css">
+</head>
+<body class="r99">
+
+<div class="r99-atmos" aria-hidden="true"></div>
+<div class="r99-rain" aria-hidden="true"></div>
+<div class="r99-grain" aria-hidden="true"></div>
+<div class="r99-vignette" aria-hidden="true"></div>
+
+<a class="r99-skip" href="#main">跳到正文</a>
+
+<header class="r99-shop__bar">
+  <div class="r99-shell r99-shop__bar-inner">
+    <a class="r99-shop__back" href="library.html" aria-label="返回档案库">
+      <svg viewBox="0 0 30 26" fill="none" aria-hidden="true" focusable="false">
+        <path d="M11 2.5 1.5 13 11 23.5" stroke="currentColor" stroke-width="1.2"></path>
+        <path d="M1.5 13H29" stroke="currentColor" stroke-width="1.2"></path>
+      </svg>
+      <span>
+        <span class="r99-shop__back-zh">返回</span>
+        <span class="r99-shop__back-en">Back</span>
+      </span>
+    </a>
+
+    <div class="r99-shop__ident">
+      <span class="r99-kicker r99-kicker--accent">The store</span>
+      <h1 class="r99-shop__title">
+        <span class="r99-shop__title-zh">商城</span>
+        <span class="r99-shop__title-en">Store</span>
+      </h1>
+    </div>
+
+    <div class="r99-shop__wallet" role="group" aria-label="货币余额">
+      <div class="r99-shop__currency">
+        <svg class="r99-shop__coin" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <rect x="3.5" y="3.5" width="17" height="17" stroke="currentColor" stroke-width="1.1"></rect>
+          <path d="M12 7.5v9M7.5 12h9" stroke="currentColor" stroke-width="1.1"></path>
+        </svg>
+        <span class="r99-shop__currency-text">
+          <span class="r99-shop__currency-zh">档案币</span>
+          <span class="r99-shop__currency-en">Archive mark</span>
+        </span>
+        <span class="r99-shop__amount">12,480</span>
+        <button class="r99-shop__plus r99-cut" type="button" aria-label="补充档案币" data-r99-toast="补充档案币的窗口尚未开放（示例）">+</button>
+      </div>
+      <div class="r99-shop__currency">
+        <svg class="r99-shop__coin" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <rect x="3" y="5.5" width="18" height="13" stroke="currentColor" stroke-width="1.1"></rect>
+          <path d="M15 5.5v13" stroke="currentColor" stroke-width="1.1" stroke-dasharray="1.5 2"></path>
+          <path d="M6 10h5M6 13h5" stroke="currentColor" stroke-width="1.1"></path>
+        </svg>
+        <span class="r99-shop__currency-text">
+          <span class="r99-shop__currency-zh">调阅券</span>
+          <span class="r99-shop__currency-en">Reading pass</span>
+        </span>
+        <span class="r99-shop__amount">36</span>
+        <button class="r99-shop__plus r99-cut" type="button" aria-label="补充调阅券" data-r99-toast="补充调阅券的窗口尚未开放（示例）">+</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="r99-shell r99-shop__shelves" aria-label="柜台分区">
+  <a class="r99-shop__shelf" href="#stock" aria-current="page">
+    <span class="r99-shop__shelf-zh">全部商品</span>
+    <span class="r99-shop__shelf-en">All goods</span>
+  </a>
+  <a class="r99-shop__shelf" href="#stock">
+    <span class="r99-shop__shelf-zh">常规货柜</span>
+    <span class="r99-shop__shelf-en">General counter</span>
+  </a>
+  <a class="r99-shop__shelf" href="#stock">
+    <span class="r99-shop__shelf-zh">装订材料</span>
+    <span class="r99-shop__shelf-en">Binding stock</span>
+  </a>
+  <a class="r99-shop__shelf" href="#stock">
+    <span class="r99-shop__shelf-zh">兑换柜台</span>
+    <span class="r99-shop__shelf-en">Exchange desk</span>
+  </a>
+</nav>
+
+<main id="main" class="r99-main">
+  <div class="r99-shell">
+    <div class="r99-shop__layout">
+
+      <section class="r99-shop__stock" id="stock" aria-labelledby="stock-title">
+        <div class="r99-shop__stockhead">
+          <div>
+            <span class="r99-kicker">Cabinet 03</span>
+            <h2 class="r99-h2" id="stock-title">全部商品</h2>
+            <p class="r99-note r99-shop__stocknote">商城每晨六时校准价目与库存，售罄即下架。</p>
+          </div>
+          <span class="r99-shop__stockcount"><b>8</b>件在售</span>
+        </div>
+        <div class="r99-shop__dots" aria-hidden="true"></div>
+
+        <ul class="r99-shop__grid">
+          <li class="r99-shop__cell">
+<button class="r99-item r99-shop__item" type="button" data-shop-item data-rare="5" data-name="银盐封套" data-price="120" data-stock="6" data-ref="I-0512" data-note="档案用品 · 库房直供" aria-pressed="true" aria-label="银盐封套，单价 120 档案币，库存 6 件">
+              <span class="r99-item__plate">
+                <svg class="r99-item__icon r99-shop__glyph" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+                  <rect x="12" y="20" width="40" height="26" stroke="currentColor" stroke-width="1.2"></rect>
+                  <path d="m12 20 20 15 20-15" stroke="currentColor" stroke-width="1.2"></path>
+                  <path d="M23 16h18v8" stroke="currentColor" stroke-width="1.2"></path>
+                </svg>
+                <span class="r99-item__count">
+                  <span class="r99-shop__price">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="1.4"></rect><path d="M12 8.5v7M8.5 12h7" stroke="currentColor" stroke-width="1.4"></path></svg>
+                    120
+                  </span>
+                  <span class="r99-shop__stock">×6</span>
+                </span>
+                <span class="r99-item__band"></span>
+              </span>
+              <span class="r99-item__name">银盐封套</span>
+            </button>
+          </li>
+
+          <li class="r99-shop__cell">
+<button class="r99-item r99-shop__item" type="button" data-shop-item data-rare="4" data-name="铜制书签" data-price="45" data-stock="12" data-ref="I-0518" data-note="文具 · 手工打制" aria-pressed="false" aria-label="铜制书签，单价 45 档案币，库存 12 件">
+              <span class="r99-item__plate">
+                <svg class="r99-item__icon r99-shop__glyph" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M26 10h12v42l-6-5-6 5z" stroke="currentColor" stroke-width="1.2"></path>
+                  <circle cx="32" cy="18" r="2.5" stroke="currentColor" stroke-width="1.2"></circle>
+                  <path d="M32 25v12" stroke="currentColor" stroke-width="1.2"></path>
+                </svg>
+                <span class="r99-item__count">
+                  <span class="r99-shop__price">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="1.4"></rect><path d="M12 8.5v7M8.5 12h7" stroke="currentColor" stroke-width="1.4"></path></svg>
+                    45
+                  </span>
+                  <span class="r99-shop__stock">×12</span>
+                </span>
+                <span class="r99-item__band"></span>
+              </span>
+              <span class="r99-item__name">铜制书签</span>
+            </button>
+          </li>
+
+          <li class="r99-shop__cell">
+<button class="r99-item r99-shop__item" type="button" data-shop-item data-rare="4" data-name="黄铜钥匙" data-price="45" data-stock="9" data-ref="I-0520" data-note="五金 · 旧件修复" aria-pressed="false" aria-label="黄铜钥匙，单价 45 档案币，库存 9 件">
+              <span class="r99-item__plate">
+                <svg class="r99-item__icon r99-shop__glyph" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+                  <circle cx="21" cy="22" r="8" stroke="currentColor" stroke-width="1.2"></circle>
+                  <path d="m26 27 20 20M39 40l5-5M45 46l5-5" stroke="currentColor" stroke-width="1.2"></path>
+                </svg>
+                <span class="r99-item__count">
+                  <span class="r99-shop__price">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="1.4"></rect><path d="M12 8.5v7M8.5 12h7" stroke="currentColor" stroke-width="1.4"></path></svg>
+                    45
+                  </span>
+                  <span class="r99-shop__stock">×9</span>
+                </span>
+                <span class="r99-item__band"></span>
+              </span>
+              <span class="r99-item__name">黄铜钥匙</span>
+            </button>
+          </li>
+
+          <li class="r99-shop__cell">
+<button class="r99-item r99-shop__item" type="button" data-shop-item data-rare="5" data-name="火漆印章" data-price="80" data-stock="4" data-ref="I-0526" data-note="封缄用品 · 配蜡一块" aria-pressed="false" aria-label="火漆印章，单价 80 档案币，库存 4 件">
+              <span class="r99-item__plate">
+                <svg class="r99-item__icon r99-shop__glyph" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M32 16 46 30 32 44 18 30z" stroke="currentColor" stroke-width="1.2"></path>
+                  <path d="M32 23v14M25 30h14" stroke="currentColor" stroke-width="1.2"></path>
+                  <path d="m24 44-5 9M40 44l5 9" stroke="currentColor" stroke-width="1.2"></path>
+                </svg>
+                <span class="r99-item__count">
+                  <span class="r99-shop__price">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="1.4"></rect><path d="M12 8.5v7M8.5 12h7" stroke="currentColor" stroke-width="1.4"></path></svg>
+                    80
+                  </span>
+                  <span class="r99-shop__stock">×4</span>
+                </span>
+                <span class="r99-item__band"></span>
+              </span>
+              <span class="r99-item__name">火漆印章</span>
+            </button>
+          </li>
+
+          <li class="r99-shop__cell">
+<button class="r99-item r99-shop__item" type="button" data-shop-item data-rare="3" data-name="玻璃墨水瓶" data-price="30" data-stock="20" data-ref="I-0531" data-note="耗材 · 每瓶 30 毫升" aria-pressed="false" aria-label="玻璃墨水瓶，单价 30 档案币，库存 20 件">
+              <span class="r99-item__plate">
+                <svg class="r99-item__icon r99-shop__glyph" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M24 28h16v22H24z" stroke="currentColor" stroke-width="1.2"></path>
+                  <path d="M27 28v-5h10v5M25 19h14v4H25z" stroke="currentColor" stroke-width="1.2"></path>
+                  <path d="M24 40h16" stroke="currentColor" stroke-width="1.2"></path>
+                </svg>
+                <span class="r99-item__count">
+                  <span class="r99-shop__price">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="1.4"></rect><path d="M12 8.5v7M8.5 12h7" stroke="currentColor" stroke-width="1.4"></path></svg>
+                    30
+                  </span>
+                  <span class="r99-shop__stock">×20</span>
+                </span>
+                <span class="r99-item__band"></span>
+              </span>
+              <span class="r99-item__name">玻璃墨水瓶</span>
+            </button>
+          </li>
+
+          <li class="r99-shop__cell">
+<button class="r99-item r99-shop__item" type="button" data-shop-item data-rare="4" data-name="折叠放大镜" data-price="65" data-stock="7" data-ref="I-0534" data-note="阅览用品 · 铜架" aria-pressed="false" aria-label="折叠放大镜，单价 65 档案币，库存 7 件">
+              <span class="r99-item__plate">
+                <svg class="r99-item__icon r99-shop__glyph" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+                  <circle cx="27" cy="27" r="10" stroke="currentColor" stroke-width="1.2"></circle>
+                  <path d="m34 34 13 13" stroke="currentColor" stroke-width="1.2"></path>
+                  <path d="M22 27h10M27 22v10" stroke="currentColor" stroke-width="1.2"></path>
+                </svg>
+                <span class="r99-item__count">
+                  <span class="r99-shop__price">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="1.4"></rect><path d="M12 8.5v7M8.5 12h7" stroke="currentColor" stroke-width="1.4"></path></svg>
+                    65
+                  </span>
+                  <span class="r99-shop__stock">×7</span>
+                </span>
+                <span class="r99-item__band"></span>
+              </span>
+              <span class="r99-item__name">折叠放大镜</span>
+            </button>
+          </li>
+
+          <li class="r99-shop__cell">
+<button class="r99-item r99-shop__item" type="button" data-shop-item data-rare="3" data-name="亚麻档案袋" data-price="25" data-stock="30" data-ref="I-0540" data-note="耗材 · 十只装" aria-pressed="false" aria-label="亚麻档案袋，单价 25 档案币，库存 30 件">
+              <span class="r99-item__plate">
+                <svg class="r99-item__icon r99-shop__glyph" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M10 18h18l4 5h22v27H10z" stroke="currentColor" stroke-width="1.2"></path>
+                  <path d="M10 27h44M18 36h20" stroke="currentColor" stroke-width="1.2"></path>
+                </svg>
+                <span class="r99-item__count">
+                  <span class="r99-shop__price">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="1.4"></rect><path d="M12 8.5v7M8.5 12h7" stroke="currentColor" stroke-width="1.4"></path></svg>
+                    25
+                  </span>
+                  <span class="r99-shop__stock">×30</span>
+                </span>
+                <span class="r99-item__band"></span>
+              </span>
+              <span class="r99-item__name">亚麻档案袋</span>
+            </button>
+          </li>
+
+          <li class="r99-shop__cell">
+<button class="r99-item r99-shop__item" type="button" data-shop-item data-rare="6" data-name="日期打码器" data-price="200" data-stock="2" data-ref="I-0544" data-note="库房设备 · 附字模一套" aria-pressed="false" aria-label="日期打码器，单价 200 档案币，库存 2 件">
+              <span class="r99-item__plate">
+                <svg class="r99-item__icon r99-shop__glyph" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+                  <rect x="18" y="38" width="28" height="10" stroke="currentColor" stroke-width="1.2"></rect>
+                  <path d="M24 38V26h16v12M28 26v-6h8v6M24 21h16" stroke="currentColor" stroke-width="1.2"></path>
+                </svg>
+                <span class="r99-item__count">
+                  <span class="r99-shop__price">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="1.4"></rect><path d="M12 8.5v7M8.5 12h7" stroke="currentColor" stroke-width="1.4"></path></svg>
+                    200
+                  </span>
+                  <span class="r99-shop__stock">×2</span>
+                </span>
+                <span class="r99-item__band"></span>
+              </span>
+              <span class="r99-item__name">日期打码器</span>
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <aside class="r99-panel r99-panel--paper r99-shop__buy" aria-labelledby="buy-title">
+        <div class="r99-shop__buyhead">
+          <span class="r99-kicker r99-kicker--accent">Selected</span>
+          <span class="r99-shop__limit r99-cut" id="buy-stock">库存 6</span>
+        </div>
+        <h2 class="r99-h2 r99-shop__buyname" id="buy-title">银盐封套</h2>
+        <p class="r99-shop__buymeta" id="buy-meta">编号 I-0512 · 档案用品 · 库房直供</p>
+        <span class="r99-shop__rare" id="buy-rare" data-rare="5">稀有度 V</span>
+        <div class="r99-shop__dots" aria-hidden="true"></div>
+
+        <div class="r99-shop__unit">
+          <span class="r99-shop__unit-label">单价<span>Unit price</span></span>
+          <span class="r99-shop__unit-value">
+            <svg class="r99-shop__coin" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <rect x="3.5" y="3.5" width="17" height="17" stroke="currentColor" stroke-width="1.1"></rect>
+              <path d="M12 7.5v9M7.5 12h9" stroke="currentColor" stroke-width="1.1"></path>
+            </svg>
+            <b id="buy-price">120</b>
+            <span>档案币</span>
+          </span>
+        </div>
+
+        <div class="r99-shop__qty">
+          <span class="r99-shop__qty-label">数量<span>Quantity</span></span>
+          <div class="r99-shop__stepper" role="group" aria-label="购买数量">
+            <button class="r99-shop__step" type="button" id="qty-minus" aria-label="减少数量" disabled>−</button>
+            <output class="r99-shop__qty-value" id="qty-value" aria-live="polite">1</output>
+            <button class="r99-shop__step" type="button" id="qty-plus" aria-label="增加数量">+</button>
+          </div>
+        </div>
+
+        <div class="r99-shop__total">
+          <span>合计<span>Total</span></span>
+          <span><b id="buy-subtotal">120</b>档案币</span>
+        </div>
+
+        <button class="r99-btn r99-btn--primary r99-btn--block r99-shop__confirm" type="button" id="buy-confirm" data-r99-toast="已提交购买：银盐封套 ×1，合计 120 档案币">确认购买<span class="r99-btn__en">Confirm</span></button>
+        <p class="r99-note r99-shop__fine">价格与库存以商城记录为准；每人每件限购 2 件，确认后不可撤回。</p>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<footer class="r99-foot">
+  <div class="r99-shell">
+    <div class="r99-foot__row">
+      <span>夜航档案室 · 商城</span>
+      <span class="r99-num">1999 — 2026</span>
+      <span>所有内容为示例数据，仅用于展示这套界面风格。</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/fx.js"></script>
+<script>
+(function () {
+  "use strict";
+  var items = Array.prototype.slice.call(document.querySelectorAll("[data-shop-item]"));
+  if (!items.length) return;
+
+  var RARE = ["", "I", "II", "III", "IV", "V", "VI"];
+  var limit = 2;
+  var qty = 1;
+  var current = items[0];
+
+  var buyName = document.getElementById("buy-title");
+  var buyMeta = document.getElementById("buy-meta");
+  var buyPrice = document.getElementById("buy-price");
+  var buyStock = document.getElementById("buy-stock");
+  var buyRare = document.getElementById("buy-rare");
+  var buySubtotal = document.getElementById("buy-subtotal");
+  var buyConfirm = document.getElementById("buy-confirm");
+  var qtyValue = document.getElementById("qty-value");
+  var qtyMinus = document.getElementById("qty-minus");
+  var qtyPlus = document.getElementById("qty-plus");
+
+  function maxQty() {
+    return Math.min(limit, Number(current.dataset.stock) || 1);
+  }
+
+  function render() {
+    var price = Number(current.dataset.price) || 0;
+    var stock = Number(current.dataset.stock) || 0;
+    var rare = Number(current.dataset.rare) || 0;
+
+    buyName.textContent = current.dataset.name;
+    buyMeta.textContent = "编号 " + current.dataset.ref + " · " + current.dataset.note;
+    buyPrice.textContent = price;
+    buyStock.textContent = "库存 " + stock;
+    buyRare.dataset.rare = String(rare);
+    buyRare.textContent = "稀有度 " + RARE[rare];
+    qtyValue.textContent = qty;
+    buySubtotal.textContent = price * qty;
+    qtyMinus.disabled = qty <= 1;
+    qtyPlus.disabled = qty >= maxQty();
+    buyConfirm.setAttribute(
+      "data-r99-toast",
+      "已提交购买：" + current.dataset.name + " ×" + qty + "，合计 " + price * qty + " 档案币"
+    );
+  }
+
+  function select(item) {
+    current = item;
+    qty = 1;
+    items.forEach(function (el) {
+      el.setAttribute("aria-pressed", String(el === item));
+    });
+    render();
+  }
+
+  items.forEach(function (item) {
+    item.addEventListener("click", function () {
+      select(item);
+    });
+  });
+
+  qtyMinus.addEventListener("click", function () {
+    if (qty > 1) {
+      qty -= 1;
+      render();
+    }
+  });
+
+  qtyPlus.addEventListener("click", function () {
+    if (qty < maxQty()) {
+      qty += 1;
+      render();
+    }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

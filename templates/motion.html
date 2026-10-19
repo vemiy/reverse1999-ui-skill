@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark" data-accent="rust" data-density="standard" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>动效样张 · reverse1999-ui</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400..700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reverse1999.css">
+<style>
+  .motion-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; padding: 24px 0; }
+  .tile { border: 1px solid var(--r99-line); background: rgba(0,0,0,.4); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+  .tile__head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .tile__stage { position: relative; height: 190px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px dashed var(--r99-line); }
+  .tile__foot { display: flex; justify-content: space-between; align-items: center; }
+  .demo-plate { width: 80%; }
+  @keyframes demo-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .demo-plate::before { display: none; }
+  .demo-line {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 1px;
+    background: var(--r99-accent);
+    transform-origin: left center;
+    transform: scaleX(1);
+  }
+  .demo-plate.play::before { animation: demo-line 640ms var(--r99-ease-enter) both; }
+  .demo-line--tab { top: auto; bottom: -1px; height: 2px; }
+  .demo-tabs { width: 100%; }
+  @media (max-width: 980px) { .motion-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="r99">
+
+<div class="r99-atmos" aria-hidden="true"></div>
+<div class="r99-rain" aria-hidden="true"></div>
+<div class="r99-grain" aria-hidden="true"></div>
+<div class="r99-vignette" aria-hidden="true"></div>
+
+<main class="r99-main">
+  <div class="r99-shell">
+    <header class="r99-article__head">
+      <span class="r99-kicker r99-kicker--accent">Motion</span>
+      <h1 class="r99-article__title" style="font-size:44px">动效样张</h1>
+      <p class="r99-lead" style="max-width:36em">这套语言只有五种动作：淡入、上移、下移、线展开、变暗。没有弹跳、缩放、视差与发光。每格可单独重放。</p>
+      <div class="r99-actions">
+        <button class="r99-btn r99-btn--primary" id="replay-all">全部重放<span class="r99-btn__en">Replay all</span></button>
+        <span class="r99-note">系统开启「减少动态效果」时，全部静止。</span>
+      </div>
+    </header>
+
+    <div class="motion-grid">
+      <div class="tile">
+        <div class="tile__head"><span class="r99-kicker">Enter</span><span class="r99-tag">500ms</span></div>
+        <div class="tile__stage"><div class="r99-panel demo-enter" style="padding:14px 18px">淡入 + 上移 32px</div></div>
+        <div class="tile__foot"><span class="r99-note">区块出现，滚动触发一次</span><button class="r99-btn r99-btn--quiet" data-replay="demo-enter">重放</button></div>
+      </div>
+
+      <div class="tile">
+        <div class="tile__head"><span class="r99-kicker">Stagger</span><span class="r99-tag">60ms</span></div>
+        <div class="tile__stage stagger demo-stagger">
+          <span class="r99-chip">第一行</span><span class="r99-chip">第二行</span><span class="r99-chip">第三行</span><span class="r99-chip">第四行</span>
+        </div>
+        <div class="tile__foot"><span class="r99-note">一组卡片依次出现</span><button class="r99-btn r99-btn--quiet" data-replay="demo-stagger">重放</button></div>
+      </div>
+
+      <div class="tile">
+        <div class="tile__head"><span class="r99-kicker">Plate rule</span><span class="r99-tag">640ms</span></div>
+        <div class="tile__stage">
+          <div class="r99-plate demo-plate" data-r99-skip><span class="demo-line" aria-hidden="true"></span><span class="r99-plate__no">02</span><span class="r99-plate__text"><span class="r99-plate__en">Records</span><span class="r99-h3">线从左侧展开</span></span></div>
+        </div>
+        <div class="tile__foot"><span class="r99-note">分段标题的上沿线</span><button class="r99-btn r99-btn--quiet" data-replay="demo-plate">重放</button></div>
+      </div>
+
+      <div class="tile">
+        <div class="tile__head"><span class="r99-kicker">Tabs</span><span class="r99-tag">240ms</span></div>
+        <div class="tile__stage">
+          <ul class="r99-tabs demo-tabs" role="tablist" data-r99-tabs>
+            <li role="presentation"><button role="tab" id="mt1" aria-controls="mp1" aria-selected="true">原件<span class="demo-line demo-line--tab" aria-hidden="true"></span></button></li>
+            <li role="presentation"><button role="tab" id="mt2" aria-controls="mp2" aria-selected="false" tabindex="-1">抄本</button></li>
+            <li role="presentation"><button role="tab" id="mt3" aria-controls="mp3" aria-selected="false" tabindex="-1">口述</button></li>
+          </ul>
+          <div id="mp1" role="tabpanel" aria-labelledby="mt1" hidden style="position:absolute;bottom:10px;left:0;right:0;text-align:center"></div>
+        </div>
+        <div class="tile__foot"><span class="r99-note">下划线从左侧展开</span><button class="r99-btn r99-btn--quiet" data-replay="demo-tabs">重放</button></div>
+      </div>
+
+      <div class="tile">
+        <div class="tile__head"><span class="r99-kicker">Dialog</span><span class="r99-tag">480ms</span></div>
+        <div class="tile__stage"><button class="r99-btn" data-r99-open="dlg-motion">打开对话框</button></div>
+        <div class="tile__foot"><span class="r99-note">淡入 + 上移 10px</span><button class="r99-btn r99-btn--quiet" data-replay="demo-dialog">重放</button></div>
+      </div>
+
+      <div class="tile">
+        <div class="tile__head"><span class="r99-kicker">Notice</span><span class="r99-tag">520 / 60 / 120</span></div>
+        <div class="tile__stage"><button class="r99-btn" data-r99-open="dlg-notice-motion">打开提示</button></div>
+        <div class="tile__foot"><span class="r99-note">标题、正文、按钮依次出现</span><button class="r99-btn r99-btn--quiet" data-replay="demo-notice">重放</button></div>
+      </div>
+
+      <div class="tile">
+        <div class="tile__head"><span class="r99-kicker">Sheet</span><span class="r99-tag">480ms</span></div>
+        <div class="tile__stage"><button class="r99-btn" data-r99-open="sheet-motion">打开底部面板</button></div>
+        <div class="tile__foot"><span class="r99-note">自下而上 32px</span><button class="r99-btn r99-btn--quiet" data-replay="demo-sheet">重放</button></div>
+      </div>
+
+      <div class="tile">
+        <div class="tile__head"><span class="r99-kicker">Settle</span><span class="r99-tag">900ms</span></div>
+        <div class="tile__stage">
+          <div class="r99-settle" id="settle-demo">
+            <div class="r99-settle__row">
+              <div class="r99-settle__card" style="--i:0">仪式<span>Rite</span></div>
+              <div class="r99-settle__card" style="--i:1">共鸣<span>Echo</span></div>
+              <div class="r99-settle__card" style="--i:2">结算<span>Settle</span></div>
+            </div>
+            <div class="r99-settle__num">1,024<small>伤害</small></div>
+          </div>
+        </div>
+        <div class="tile__foot"><span class="r99-note">卡牌右入 + 数值浮起</span><button class="r99-btn r99-btn--quiet" data-replay="demo-settle">重放</button></div>
+      </div>
+      <div class="tile">
+        <div class="tile__head"><span class="r99-kicker">Toast</span><span class="r99-tag">320ms</span></div>
+        <div class="tile__stage"><button class="r99-btn" data-r99-toast="这是一条提示，2.6 秒后消失">触发提示条</button></div>
+        <div class="tile__foot"><span class="r99-note">淡入 + 上移 12px</span><button class="r99-btn r99-btn--quiet" data-replay="demo-toast">重放</button></div>
+      </div>
+
+      <div class="tile">
+        <div class="tile__head"><span class="r99-kicker">Press</span><span class="r99-tag">200ms</span></div>
+        <div class="tile__stage"><button class="r99-btn r99-btn--primary" style="padding:14px 28px">按下变暗 18%</button></div>
+        <div class="tile__foot"><span class="r99-note">悬停 3%，按下 18%，不变亮</span></div>
+      </div>
+    </div>
+
+    <section class="r99-section">
+      <div class="r99-plate">
+        <span class="r99-plate__no">03</span>
+        <span class="r99-plate__text"><span class="r99-plate__en">Rules</span><span class="r99-h2">五条规矩</span></span>
+      </div>
+      <div class="r99-grid r99-grid--2">
+        <div class="r99-panel r99-panel--quiet"><h3 class="r99-h3">只有五种动作</h3><p class="r99-note">淡入、上移、下移、线展开、变暗。没有第六种。</p></div>
+        <div class="r99-panel r99-panel--quiet"><h3 class="r99-h3">退出比进入快</h3><p class="r99-note">进入 500ms，退出 350ms；退出不带反向位移。</p></div>
+        <div class="r99-panel r99-panel--quiet"><h3 class="r99-h3">一组只错开 60ms</h3><p class="r99-note">六个以内；再多就整组一起出现，总延迟不超过 300ms。</p></div>
+        <div class="r99-panel r99-panel--quiet"><h3 class="r99-h3">按下去是暗，不是亮</h3><p class="r99-note">悬停 3%、按下 18%；位移与缩放一次都不用。</p></div>
+        <div class="r99-panel r99-panel--quiet"><h3 class="r99-h3">跨页只做淡入</h3><p class="r99-note">支持 View Transitions 的浏览器在页面之间淡入；不支持的直接跳转。</p></div>
+        <div class="r99-panel r99-panel--quiet"><h3 class="r99-h3">减少动效后静态</h3><p class="r99-note">开启系统开关后全部关闭，内容仍然完整。</p></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="r99-scrim" id="scrim-motion" hidden></div>
+<div class="r99-dialog" role="dialog" aria-modal="true" aria-labelledby="dlg-motion-title" id="dlg-motion" data-r99-scrim="scrim-motion" hidden>
+  <span class="r99-kicker r99-kicker--accent">Dialog</span>
+  <h2 class="r99-h2" id="dlg-motion-title" style="margin-top:8px">对话框</h2>
+  <p class="r99-note" style="margin:12px 0 20px">480ms 淡入 + 上移 10px；退出 350ms。按 Esc 关闭。</p>
+  <div class="r99-actions" style="margin:0">
+    <button class="r99-btn r99-btn--primary" data-r99-close>好</button>
+    <button class="r99-btn" data-r99-close>取消</button>
+  </div>
+</div>
+
+<div class="r99-notice" role="dialog" aria-modal="true" aria-labelledby="notice-motion-title" id="dlg-notice-motion" hidden>
+  <div class="r99-notice__head">
+    <svg class="r99-notice__arch" viewBox="0 0 46 24" aria-hidden="true"><path d="M2 23V10L23 2l21 8v13" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+    <h2 class="r99-notice__title" id="notice-motion-title">提示</h2>
+    <span class="r99-notice__en">Notice</span>
+  </div>
+  <div class="r99-notice__body">是否退出游戏？</div>
+  <div class="r99-notice__actions">
+    <button class="r99-notice__btn" data-r99-close>取消<span>Cancel</span></button>
+    <button class="r99-notice__btn r99-notice__btn--primary" data-r99-close>确认<span>Confirm</span></button>
+  </div>
+</div>
+
+<div class="r99-scrim" id="scrim-sheet-motion" hidden></div>
+<div class="r99-sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-motion-title" id="sheet-motion" data-r99-scrim="scrim-sheet-motion" hidden>
+  <div class="r99-sheet__grip" aria-hidden="true"></div>
+  <span class="r99-kicker">Sheet</span>
+  <h2 class="r99-h3" id="sheet-motion-title" style="margin-top:6px">底部面板</h2>
+  <p class="r99-note" style="margin:8px 0 16px">自下而上 32px，480ms；关闭 350ms。</p>
+  <button class="r99-btn r99-btn--primary r99-btn--block" data-r99-close>关闭</button>
+</div>
+
+<script src="../assets/variant.js"></script>
+<script src="../assets/fx.js"></script>
+<script>
+  // 单条重放：用一次强制重排重新触发动画类
+  function playLine(selector) {
+    var el = document.querySelector(selector);
+    if (!el) return;
+    var line = el.querySelector(".demo-line") || el.querySelector("button");
+    if (!line) return;
+    if (line.animate) {
+      line.animate(
+        [{ transform: "scaleX(0)" }, { transform: "scaleX(1)" }],
+        { duration: selector === ".demo-tabs" ? 240 : 640, easing: "cubic-bezier(.22,.61,.36,1)", fill: "both" }
+      );
+    }
+  }
+
+  function replay(selector) {
+    var el = document.querySelector(selector);
+    if (!el) return;
+    el.classList.remove("r99-in", "anim-enter", "anim-sheet", "anim-fade");
+    void el.offsetWidth;
+    el.classList.add("r99-in");
+  }
+  document.querySelectorAll("[data-replay]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var key = btn.getAttribute("data-replay");
+      if (key === "demo-dialog") { document.querySelector('[data-r99-open="dlg-motion"]').click(); return; }
+      if (key === "demo-notice") { document.querySelector('[data-r99-open="dlg-notice-motion"]').click(); return; }
+      if (key === "demo-sheet") { document.querySelector('[data-r99-open="sheet-motion"]').click(); return; }
+      if (key === "demo-toast") { document.querySelector('[data-r99-toast]').click(); return; }
+      if (key === "demo-settle") {
+        var s = document.getElementById("settle-demo");
+        s.removeAttribute("data-state");
+        void s.offsetWidth;
+        s.setAttribute("data-state", "run");
+        return;
+      }
+      if (key === "demo-tabs") { playLine(".demo-tabs"); return; }
+      if (key === "demo-plate") { playLine(".demo-plate"); return; }
+      if (key === "demo-stagger") {
+        document.querySelectorAll(".demo-stagger > *").forEach(function (el, i) {
+          el.style.animation = "none"; void el.offsetWidth;
+          el.style.animation = "r99-enter 500ms cubic-bezier(.22,.61,.36,1) " + i * 60 + "ms both";
+        });
+        return;
+      }
+      replay("." + key);
+    });
+  });
+  document.getElementById("replay-all").addEventListener("click", function () {
+    document.querySelectorAll("[data-replay]").forEach(function (b, i) {
+      setTimeout(function () { b.click(); }, i * 260);
+    });
+  });
+</script>
+</body>
+</html>

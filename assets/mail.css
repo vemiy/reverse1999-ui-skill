@@ -1,0 +1,604 @@
+/* 邮件页：左列表、右米纸阅读区。 */
+
+/* ---------- 顶栏 ---------- */
+
+.r99-mail__bar {
+  position: relative;
+  z-index: 4;
+  border-bottom: var(--r99-hair) solid var(--r99-line);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent);
+}
+
+.r99-mail__bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--r99-s4);
+  padding-block: var(--r99-s4);
+}
+
+.r99-mail__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  color: var(--r99-text-muted);
+  transition: color var(--r99-t-hover) ease;
+}
+
+.r99-mail__back:hover {
+  color: var(--r99-text);
+}
+
+.r99-mail__back svg {
+  flex: none;
+  width: 30px;
+  height: 26px;
+}
+
+.r99-mail__back-zh {
+  font-size: var(--r99-fs-small);
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+}
+
+.r99-mail__back-en {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--r99-display);
+  font-size: 8px;
+  line-height: 1.2;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: currentColor;
+  opacity: 0.7;
+}
+
+.r99-mail__ident {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  margin-right: auto;
+}
+
+.r99-mail__title {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+}
+
+.r99-mail__title-zh {
+  border-bottom: var(--r99-hair) solid var(--r99-accent);
+  padding-bottom: 2px;
+}
+
+.r99-mail__title-en {
+  font-family: var(--r99-display);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--r99-text-muted);
+}
+
+.r99-mail__bulk {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--r99-s2);
+}
+
+.r99-mail__total {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-right: var(--r99-s2);
+  font-size: var(--r99-fs-meta);
+  letter-spacing: 0.08em;
+  color: var(--r99-text-muted);
+}
+
+.r99-mail__total b {
+  font-family: var(--r99-display);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--r99-text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 主栅格 ---------- */
+
+.r99-mail {
+  --r99-mail-list-w: 383px;
+  --r99-mail-body-w: 378px;
+  --r99-mail-thumb-w: 86px;
+  --r99-mail-thumb-h: 99px;
+  display: grid;
+  grid-template-columns: minmax(0, var(--r99-mail-list-w)) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--r99-s3);
+  padding: var(--r99-s4) 0 var(--r99-s5);
+}
+
+.r99-mail__listpane {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 636px;
+  background: var(--r99-surface);
+  border: var(--r99-hair) solid var(--r99-line-strong);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.r99-mail__listpane::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--r99-strong);
+  background: var(--r99-accent);
+}
+
+.r99-mail__listhead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--r99-s3);
+  padding: var(--r99-s4) var(--r99-s4) var(--r99-s2);
+}
+
+.r99-mail__listhead .r99-h3 {
+  margin-top: 2px;
+}
+
+.r99-mail__listcount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex: none;
+}
+
+.r99-mail__listcount b {
+  font-family: var(--r99-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--r99-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.r99-mail__listcount-en {
+  font-family: var(--r99-display);
+  font-size: 8px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--r99-text-muted);
+}
+
+/* 点状分隔线 */
+.r99-mail__dots {
+  height: 4px;
+  margin: 0 var(--r99-s4);
+  background-image: radial-gradient(var(--r99-line-strong) 1px, transparent 1px);
+  background-size: 6px 4px;
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+  opacity: 0.9;
+}
+
+/* ---------- 邮件列表 ---------- */
+
+.r99-mail__list {
+  flex: 1 1 auto;
+  margin: var(--r99-s2) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--r99-hair) solid var(--r99-line);
+}
+
+.r99-mail__list > li {
+  border-bottom: var(--r99-hair) solid var(--r99-line);
+}
+
+.r99-mail__item {
+  --r99-mail-item-h: 75px;
+  display: grid;
+  grid-template-columns: 8px minmax(0, 1fr);
+  column-gap: 10px;
+  row-gap: 3px;
+  min-height: var(--r99-mail-item-h);
+  padding: 13px var(--r99-s4);
+  color: var(--r99-text);
+  border-radius: 0;
+  transition:
+    background-color var(--r99-t-hover) ease,
+    box-shadow var(--r99-t-hover) ease;
+}
+
+.r99-mail__item:hover {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.r99-mail__item[aria-current="true"] {
+  background: color-mix(in srgb, var(--r99-accent) 16%, transparent);
+  box-shadow: inset var(--r99-strong) 0 0 0 var(--r99-accent);
+}
+
+.r99-mail__mark {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  align-self: start;
+  margin-top: 8px;
+  border-radius: 0;
+}
+
+.r99-mail__mark.r99-unread {
+  background: var(--r99-accent);
+}
+
+.r99-mail__item-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--r99-s2);
+  grid-column: 2;
+  min-width: 0;
+}
+
+.r99-mail__from {
+  min-width: 0;
+  font-size: var(--r99-fs-meta);
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  color: var(--r99-text-muted);
+  overflow-wrap: anywhere;
+}
+
+.r99-mail__date {
+  flex: none;
+  font-family: var(--r99-display);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--r99-text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.r99-mail__subject {
+  grid-column: 2;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: var(--r99-text-muted);
+  overflow-wrap: anywhere;
+}
+
+.r99-mail__item[aria-current="true"] .r99-mail__subject,
+.r99-mail__item--unread .r99-mail__subject {
+  color: var(--r99-text);
+}
+
+.r99-mail__item--unread .r99-mail__subject {
+  font-weight: 700;
+}
+
+.r99-mail__ref {
+  grid-column: 2;
+  font-family: var(--r99-display);
+  font-size: 9px;
+  line-height: 1.4;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--r99-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 列表页脚 ---------- */
+
+.r99-mail__listfoot {
+  margin-top: auto;
+  padding: var(--r99-s3) var(--r99-s4) var(--r99-s4);
+  border-top: var(--r99-hair) solid var(--r99-line-strong);
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.r99-mail__stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--r99-s2);
+  font-size: var(--r99-fs-meta);
+  letter-spacing: 0.04em;
+  color: var(--r99-text-muted);
+}
+
+.r99-mail__stats b {
+  font-family: var(--r99-display);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--r99-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.r99-mail__listfoot .r99-note {
+  margin: var(--r99-s2) 0 0;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* ---------- 阅读区 ---------- */
+
+.r99-mail__readpane {
+  min-width: 0;
+}
+
+.r99-mail__read {
+  position: relative;
+  min-height: 636px;
+  padding: clamp(26px, 3.4vw, 44px);
+  border: var(--r99-hair) solid var(--r99-accent);
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--r99-ink);
+}
+
+/* 内框与左上、右下角花：只画角，不围成整圈 */
+.r99-mail__read::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: var(--r99-hair) solid var(--r99-line);
+  background:
+    linear-gradient(var(--r99-accent), var(--r99-accent)) left top / 18px 1px no-repeat,
+    linear-gradient(var(--r99-accent), var(--r99-accent)) left top / 1px 18px no-repeat,
+    linear-gradient(var(--r99-line-strong), var(--r99-line-strong)) right bottom / 18px 1px no-repeat,
+    linear-gradient(var(--r99-line-strong), var(--r99-line-strong)) right bottom / 1px 18px no-repeat;
+  pointer-events: none;
+}
+
+.r99-mail__read[hidden] {
+  display: none;
+}
+
+.r99-mail__readhead {
+  position: relative;
+  padding-bottom: var(--r99-s3);
+  border-bottom: var(--r99-hair) solid var(--r99-line-strong);
+}
+
+.r99-mail__readtop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--r99-s2);
+}
+
+.r99-mail__badge {
+  flex: none;
+  padding: 4px 12px;
+  font-family: var(--r99-display);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--r99-accent);
+  border: var(--r99-hair) solid var(--r99-accent);
+  border-radius: 0;
+  --r99-cut: 8px;
+}
+
+.r99-mail__subject-lg {
+  margin: 14px 0 10px;
+  font-size: clamp(24px, 3.2vw, 34px);
+  font-weight: 700;
+  line-height: 1.32;
+  letter-spacing: 0.04em;
+  color: var(--r99-ink);
+  overflow-wrap: anywhere;
+}
+
+.r99-mail__meta {
+  font-size: 11px;
+  color: var(--r99-ink-muted);
+}
+
+.r99-mail__body {
+  max-width: min(calc(var(--r99-mail-body-w) * 2), 760px);
+  margin-top: var(--r99-s4);
+  font-size: 16px;
+  line-height: 2.05;
+  letter-spacing: 0.02em;
+  color: var(--r99-ink);
+}
+
+.r99-mail__body p {
+  margin: 0 0 var(--r99-s3);
+}
+
+.r99-mail__body p + p {
+  text-indent: 2em;
+}
+
+.r99-mail__body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 附件条 ---------- */
+
+.r99-mail__attach {
+  display: grid;
+  grid-template-columns: var(--r99-mail-thumb-w) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--r99-s3);
+  margin-top: var(--r99-s5);
+  padding: var(--r99-s3) 0;
+  border-top: var(--r99-hair) solid var(--r99-line-strong);
+  border-bottom: var(--r99-hair) solid var(--r99-line-strong);
+}
+
+.r99-mail__attach-icon {
+  display: grid;
+  place-items: center;
+  width: var(--r99-mail-thumb-w);
+  height: var(--r99-mail-thumb-h);
+  color: var(--r99-accent);
+  background: color-mix(in srgb, var(--r99-accent) 7%, transparent);
+  border: var(--r99-hair) solid var(--r99-line-strong);
+  border-radius: 0;
+}
+
+.r99-mail__attach-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.r99-mail__attach-text {
+  min-width: 0;
+}
+
+.r99-mail__attach-text h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: var(--r99-ink);
+  overflow-wrap: anywhere;
+}
+
+.r99-mail__attach-text p {
+  margin: 2px 0 0;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--r99-ink-muted);
+}
+
+.r99-mail__attach .r99-btn {
+  min-height: 42px;
+  padding: 8px 18px;
+  color: var(--r99-ink);
+  border-color: var(--r99-line-strong);
+}
+
+/* ---------- 阅读区页脚 ---------- */
+
+.r99-mail__sign {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--r99-s3);
+  margin-top: var(--r99-s4);
+}
+
+.r99-mail__sign p {
+  margin: 0;
+}
+
+.r99-mail__signature {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+  text-align: right;
+  color: var(--r99-ink);
+}
+
+.r99-mail__signature span {
+  display: block;
+  font-family: var(--r99-display);
+  font-size: 8px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--r99-ink-muted);
+}
+
+/* ---------- 响应式 ---------- */
+
+@media (max-width: 1100px) {
+  .r99-mail {
+    grid-template-columns: minmax(0, 304px) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .r99-mail {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--r99-s3);
+  }
+  .r99-mail__listpane,
+  .r99-mail__read {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .r99-mail__bar-inner {
+    align-items: flex-start;
+    gap: var(--r99-s3);
+  }
+  .r99-mail__title {
+    font-size: 28px;
+    gap: 10px;
+  }
+  .r99-mail__ident {
+    margin-right: 0;
+  }
+  .r99-mail__bulk {
+    flex: 1 1 100%;
+  }
+  .r99-mail__total {
+    width: 100%;
+    margin-right: 0;
+  }
+  .r99-mail__listhead {
+    padding: var(--r99-s3) var(--r99-s3) var(--r99-s2);
+  }
+  .r99-mail__dots {
+    margin-inline: var(--r99-s3);
+  }
+  .r99-mail__item {
+    padding: 12px var(--r99-s3);
+  }
+  .r99-mail__subject {
+    font-size: 15px;
+  }
+  .r99-mail__listfoot {
+    padding: var(--r99-s3);
+  }
+  .r99-mail__read {
+    padding: 24px 20px;
+  }
+  .r99-mail__read::before {
+    inset: 6px;
+  }
+  .r99-mail__attach {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: var(--r99-s2);
+  }
+  .r99-mail__attach-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .r99-mail__attach .r99-btn {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+  .r99-mail__signature {
+    text-align: left;
+  }
+}

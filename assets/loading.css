@@ -1,0 +1,632 @@
+/* 加载界面样张：仅 loading.html 使用的页面样式 */
+
+/* ---------- 1. 页面与背景 ---------- */
+
+.ld-page {
+  background: var(--r99-bg-deep);
+}
+
+/* 雨丝静止 */
+.ld-page .r99-rain {
+  inset: -10%;
+  animation: none;
+  opacity: 0.72;
+  filter: blur(0.2px);
+  background-image:
+    repeating-linear-gradient(100deg, rgba(226, 236, 240, 0.075) 0 1px, transparent 1px 10px),
+    repeating-linear-gradient(96deg, rgba(226, 236, 240, 0.035) 0 1px, transparent 1px 22px);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 0.9));
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 0.9));
+}
+
+.ld-stage {
+  position: relative;
+  z-index: 3;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: clamp(16px, 3.4vh, 40px);
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(16px, 3.2vh, 34px) clamp(18px, 4.4vw, 64px) clamp(18px, 3.4vh, 38px);
+  overflow: hidden;
+}
+
+.ld-ground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(52% 42% at 50% 44%, rgba(46, 68, 79, 0.34), transparent 72%),
+    radial-gradient(64% 48% at 50% 100%, rgba(88, 44, 26, 0.16), transparent 72%),
+    linear-gradient(180deg, rgba(7, 6, 6, 0.12) 0%, rgba(7, 6, 6, 0.5) 66%, rgba(7, 6, 6, 0.88) 100%);
+}
+
+.ld-stage.is-return .ld-ground {
+  background:
+    radial-gradient(52% 42% at 50% 44%, rgba(46, 68, 79, 0.24), transparent 72%),
+    radial-gradient(64% 48% at 50% 100%, rgba(88, 44, 26, 0.24), transparent 72%),
+    linear-gradient(180deg, rgba(7, 6, 6, 0.12) 0%, rgba(7, 6, 6, 0.52) 66%, rgba(7, 6, 6, 0.9) 100%);
+}
+
+/* 中央光轴 */
+.ld-ground::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 58%;
+  background: linear-gradient(180deg, rgba(233, 220, 205, 0.1), transparent);
+}
+
+/* 网点只出现一处，位于门形背后 */
+.ld-halftone {
+  position: absolute;
+  left: 50%;
+  top: 47%;
+  width: min(460px, 78vw);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background-image: var(--r99-halftone);
+  background-size: 6px 6px;
+  opacity: 0.09;
+  mask-image: radial-gradient(circle, #000 0%, transparent 68%);
+  -webkit-mask-image: radial-gradient(circle, #000 0%, transparent 68%);
+}
+
+.ld-door-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2vh;
+}
+
+.ld-door {
+  width: clamp(240px, 27vw, 360px);
+  color: rgba(233, 220, 205, 0.38);
+  animation: ld-fade 500ms linear both;
+}
+
+.ld-door svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.ld-door__accent {
+  stroke: var(--r99-accent);
+  fill: var(--r99-accent);
+}
+
+/* ---------- 2. 顶部眉标与样张切换 ---------- */
+
+.ld-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  padding-bottom: clamp(10px, 1.6vh, 16px);
+  border-bottom: 1px solid var(--r99-line);
+}
+
+.ld-eyebrow {
+  margin: 0;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--r99-display);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--r99-text-muted);
+}
+
+.ld-eyebrow.is-on {
+  display: inline-flex;
+}
+
+.ld-eyebrow__slash {
+  color: var(--r99-line-strong);
+  letter-spacing: 0;
+}
+
+.ld-eyebrow__mode {
+  color: var(--r99-text);
+}
+
+.ld-eyebrow__no {
+  margin-left: 6px;
+  padding: 1px 5px;
+  border: 1px solid var(--r99-line);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  font-variant-numeric: tabular-nums;
+  color: var(--r99-text-muted);
+}
+
+.ld-switch {
+  display: inline-flex;
+  margin-left: auto;
+  border: 1px solid var(--r99-line-strong);
+}
+
+.ld-switch__btn {
+  position: relative;
+  min-height: 44px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--r99-serif);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--r99-text-muted);
+  cursor: pointer;
+  transition: color 200ms ease, background-color 200ms ease, filter 200ms ease;
+}
+
+.ld-switch__btn + .ld-switch__btn {
+  border-left: 1px solid var(--r99-line-strong);
+}
+
+.ld-switch__btn:hover {
+  color: var(--r99-text);
+  filter: brightness(0.97);
+}
+
+.ld-switch__btn:active {
+  filter: brightness(0.82);
+}
+
+.ld-switch__btn[aria-pressed="true"] {
+  color: var(--r99-text);
+  background: rgba(255, 253, 233, 0.045);
+}
+
+.ld-switch__btn[aria-pressed="true"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--r99-accent);
+}
+
+/* ---------- 3. 中央门形与标题 ---------- */
+
+.ld-center {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  justify-self: center;
+  width: min(100%, 640px);
+  padding: 2vh 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ld-center.is-on {
+  display: flex;
+}
+
+.ld-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-family: var(--r99-display);
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--r99-text-muted);
+}
+
+.ld-kicker::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+}
+
+.ld-title {
+  margin: 12px 0 0;
+  font-family: var(--r99-serif);
+  font-size: clamp(30px, 4.2vw, 46px);
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: 0.16em;
+  text-indent: 0.16em;
+  color: var(--r99-text);
+}
+
+.ld-en {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 14px 0 0;
+  font-family: var(--r99-display);
+  font-size: 10px;
+  letter-spacing: 0.34em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: var(--r99-text-muted);
+}
+
+.ld-en::before,
+.ld-en::after {
+  content: "";
+  width: clamp(18px, 3.6vw, 44px);
+  height: 1px;
+  background: var(--r99-line-strong);
+}
+
+.ld-sub {
+  margin: 18px 0 0;
+  max-width: 30em;
+  font-size: clamp(12px, 1.15vw, 14px);
+  line-height: 2;
+  letter-spacing: 0.08em;
+  color: var(--r99-text-muted);
+}
+
+.ld-record {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 0;
+  font-family: var(--r99-display);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.ld-record::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: var(--r99-line-strong);
+}
+
+.ld-record__label {
+  color: var(--r99-text-muted);
+}
+
+.ld-record__no {
+  color: var(--r99-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 4. 底部状态与引文 ---------- */
+
+.ld-bottom {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+  align-items: end;
+  gap: clamp(24px, 5vw, 72px);
+  padding-top: clamp(12px, 1.8vh, 18px);
+  border-top: 1px solid var(--r99-line);
+}
+
+.ld-bottom.is-on {
+  display: grid;
+}
+
+.ld-status {
+  width: 100%;
+  max-width: 440px;
+}
+
+.ld-status__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.ld-status__text {
+  font-size: clamp(13px, 1.15vw, 15px);
+  letter-spacing: 0.06em;
+  color: var(--r99-text);
+}
+
+.ld-status__count {
+  font-family: var(--r99-display);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  font-variant-numeric: tabular-nums;
+  color: var(--r99-text-muted);
+  white-space: nowrap;
+}
+
+.ld-progress {
+  position: relative;
+  height: 2px;
+  margin-top: 12px;
+  background: var(--r99-line);
+}
+
+.ld-progress__fill {
+  position: relative;
+  display: block;
+  height: 2px;
+  background: var(--r99-accent);
+}
+
+.ld-progress__fill::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -4px;
+  width: 1px;
+  height: 10px;
+  background: var(--r99-accent);
+}
+
+.ld-bottom[data-scene="load"] .ld-progress__fill {
+  width: 47%;
+}
+
+.ld-bottom[data-scene="return"] .ld-progress__fill {
+  width: 72%;
+}
+
+.ld-status__meta {
+  margin: 10px 0 0;
+  font-family: var(--r99-display);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  line-height: 1.8;
+  color: var(--r99-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.ld-quote {
+  justify-self: end;
+  max-width: 380px;
+  margin: 0;
+  text-align: right;
+}
+
+.ld-quote p {
+  margin: 0;
+  font-size: clamp(12px, 1.15vw, 14px);
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: var(--r99-text);
+}
+
+.ld-quote cite {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--r99-display);
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  line-height: 1.6;
+  color: var(--r99-text-muted);
+}
+
+/* 右侧竖排英文，仅宽屏出现 */
+.ld-side {
+  position: absolute;
+  top: 50%;
+  right: clamp(10px, 1.4vw, 22px);
+  translate: 0 -50%;
+  z-index: 1;
+  writing-mode: vertical-rl;
+  font-family: var(--r99-display);
+  font-size: 9px;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--r99-text-muted);
+  opacity: 0.72;
+}
+
+/* ---------- 5. 场景切换 ---------- */
+
+.ld-scene {
+  display: none;
+}
+
+/* ---------- 6. 动效 ---------- */
+
+@keyframes ld-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ld-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.ld-anim-rise {
+  animation: ld-rise 440ms var(--r99-ease-enter) both;
+  animation-delay: var(--ld-d, 0ms);
+}
+
+.ld-anim-fade {
+  animation: ld-fade 420ms linear both;
+  animation-delay: var(--ld-d, 0ms);
+}
+
+.ld-d1 {
+  --ld-d: 60ms;
+}
+
+.ld-d2 {
+  --ld-d: 110ms;
+}
+
+.ld-d3 {
+  --ld-d: 160ms;
+}
+
+/* ---------- 7. 响应式 ---------- */
+
+@media (max-width: 860px) {
+  .ld-bottom {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .ld-quote {
+    justify-self: stretch;
+    width: 100%;
+    max-width: none;
+    padding-top: 16px;
+    border-top: 1px solid var(--r99-line);
+    text-align: left;
+  }
+
+  .ld-side {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .ld-stage {
+    gap: 14px;
+    padding: 14px 18px 18px;
+  }
+
+  .ld-top {
+    gap: 8px 12px;
+    padding-bottom: 10px;
+  }
+
+  .ld-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    gap: 6px;
+  }
+
+  .ld-eyebrow__no {
+    margin-left: 3px;
+    padding: 1px 4px;
+    font-size: 9px;
+  }
+
+  .ld-switch__btn {
+    min-height: 44px;
+    padding: 0 12px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  .ld-center {
+    padding: 1vh 0;
+  }
+
+  .ld-kicker {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+  }
+
+  .ld-kicker::before {
+    width: 18px;
+  }
+
+  .ld-title {
+    margin-top: 10px;
+    font-size: clamp(26px, 8vw, 34px);
+    letter-spacing: 0.12em;
+    text-indent: 0.12em;
+  }
+
+  .ld-en {
+    gap: 10px;
+    margin-top: 12px;
+    font-size: 9px;
+    letter-spacing: 0.26em;
+  }
+
+  .ld-en::before,
+  .ld-en::after {
+    width: 16px;
+  }
+
+  .ld-sub {
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 1.9;
+  }
+
+  .ld-record {
+    margin-top: 16px;
+    font-size: 10px;
+  }
+
+  .ld-door {
+    width: clamp(200px, 56vw, 240px);
+  }
+
+  .ld-status__text {
+    font-size: 13px;
+  }
+
+  .ld-progress {
+    margin-top: 10px;
+  }
+
+  .ld-status__meta {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .ld-quote p {
+    font-size: 12px;
+    line-height: 1.9;
+  }
+
+  .ld-quote cite {
+    font-size: 10px;
+  }
+}
+
+/* ---------- 8. 减少动效 ---------- */
+
+[data-motion="calm"] .ld-anim-rise,
+[data-motion="calm"] .ld-anim-fade,
+[data-motion="calm"] .ld-door {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ld-anim-rise,
+  .ld-anim-fade,
+  .ld-door {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .ld-switch__btn {
+    transition: none;
+  }
+}

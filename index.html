@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>夜航档案室 · Reverse: 1999 UI Skill</title>
+<meta name="description" content="重返未来：1999 风格的界面语言与可运行参考实现。">
+<link rel="stylesheet" href="assets/reverse1999.css">
+<style>
+  .index-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 32px; }
+  .index-card { display: block; padding: 20px; border: 1px solid var(--r99-line); background: rgba(0,0,0,.35); text-decoration: none; transition: border-color 200ms ease; }
+  .index-card:hover { border-color: var(--r99-accent); }
+  .index-card__no { font-family: var(--r99-display); font-size: 26px; color: var(--r99-accent); }
+  .index-card__title { margin: 8px 0 6px; font-family: var(--r99-serif); font-size: 20px; color: var(--r99-text); }
+  .index-card__desc { margin: 0; font-size: 13px; line-height: 1.7; color: var(--r99-text-muted); }
+  .index-card__en { display: block; margin-top: 10px; font-family: var(--r99-display); font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--r99-text-muted); }
+  @media (max-width: 900px) { .index-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { .index-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="r99">
+<div class="r99-atmos" aria-hidden="true"></div>
+<div class="r99-rain" aria-hidden="true"></div>
+<div class="r99-grain" aria-hidden="true"></div>
+
+<header class="r99-masthead">
+  <div class="r99-shell r99-masthead__inner">
+    <a class="r99-logo" href="index.html">
+      <span class="r99-logo__zh">夜航档案室</span>
+      <span class="r99-logo__en">Night Archive</span>
+    </a>
+    <nav class="r99-nav" aria-label="主导航">
+      <a href="templates/showcase.html">封面</a>
+      <a href="templates/library.html">档案库</a>
+      <a href="templates/specimen.html">部件</a>
+      <a href="templates/motion.html">动效</a>
+    </nav>
+    <div class="r99-actions" style="margin:0">
+      <button class="r99-btn r99-btn--quiet" data-r99-theme-toggle aria-pressed="false">
+        明暗<span class="r99-btn__en">Light</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="r99-main">
+  <div class="r99-shell">
+    <header class="r99-article__head">
+      <span class="r99-kicker r99-kicker--accent">Reverse: 1999 · UI Skill</span>
+      <h1 class="r99-article__title">夜航档案室</h1>
+      <p class="r99-lead">一套可运行的界面语言：深色影像底、米纸面板、单一锈红线条、全直角与切角、宋体与 Didone 的字级关系。数值取自游戏 prefab，示例数据全部虚构。</p>
+      <p class="r99-note">不包含游戏素材、立绘与官方字体。</p>
+    </header>
+
+    <div class="index-grid">
+      <a class="index-card" href="templates/showcase.html">
+        <span class="index-card__no">01</span>
+        <h2 class="index-card__title">封面</h2>
+        <p class="index-card__desc">满屏影像、竖排英文、空心编号与两枚主次按钮。</p>
+        <span class="index-card__en">Cover</span>
+      </a>
+      <a class="index-card" href="templates/reading.html">
+        <span class="index-card__no">02</span>
+        <h2 class="index-card__title">卷宗</h2>
+        <p class="index-card__desc">单栏正文、右栏目录、元数据字段对与页签。</p>
+        <span class="index-card__en">Dossier</span>
+      </a>
+      <a class="index-card" href="templates/library.html">
+        <span class="index-card__no">03</span>
+        <h2 class="index-card__title">档案库</h2>
+        <p class="index-card__desc">检索、筛选、卡网格与分页。</p>
+        <span class="index-card__en">Library</span>
+      </a>
+      <a class="index-card" href="templates/console.html">
+        <span class="index-card__no">04</span>
+        <h2 class="index-card__title">陈列板</h2>
+        <p class="index-card__desc">档案箱拼贴：证件牌、纸质档案、数据卡列与徽章。</p>
+        <span class="index-card__en">Display board</span>
+      </a>
+      <a class="index-card" href="templates/mail.html">
+        <span class="index-card__no">05</span>
+        <h2 class="index-card__title">邮件</h2>
+        <p class="index-card__desc">左列表加右阅读区，未读用方角色块标记。</p>
+        <span class="index-card__en">Mail</span>
+      </a>
+      <a class="index-card" href="templates/shop.html">
+        <span class="index-card__no">06</span>
+        <h2 class="index-card__title">商城</h2>
+        <p class="index-card__desc">货币条、稀有度物品格与购买面板。</p>
+        <span class="index-card__en">Store</span>
+      </a>
+      <a class="index-card" href="templates/loading.html">
+        <span class="index-card__no">07</span>
+        <h2 class="index-card__title">加载</h2>
+        <p class="index-card__desc">满屏门形徽记、底部进度线与档案引文。</p>
+        <span class="index-card__en">Loading</span>
+      </a>
+      <a class="index-card" href="templates/app.html">
+        <span class="index-card__no">08</span>
+        <h2 class="index-card__title">手机</h2>
+        <p class="index-card__desc">顶栏、主卡、记录行与底部标签栏。</p>
+        <span class="index-card__en">Mobile</span>
+      </a>
+      <a class="index-card" href="templates/specimen.html">
+        <span class="index-card__no">09</span>
+        <h2 class="index-card__title">部件样张</h2>
+        <p class="index-card__desc">全部网页部件与游戏内部件，含提示弹窗与结算。</p>
+        <span class="index-card__en">Specimen</span>
+      </a>
+      <a class="index-card" href="templates/motion.html">
+        <span class="index-card__no">10</span>
+        <h2 class="index-card__title">动效样张</h2>
+        <p class="index-card__desc">五种动作逐格可重放：淡入、上移、下移、画线、变暗。</p>
+        <span class="index-card__en">Motion</span>
+      </a>
+      <a class="index-card" href="templates/antipatterns.html">
+        <span class="index-card__no">11</span>
+        <h2 class="index-card__title">反例对照</h2>
+        <p class="index-card__desc">做与不做的并排对照，每条给出理由。</p>
+        <span class="index-card__en">Anti-patterns</span>
+      </a>
+      <a class="index-card" href="SKILL.md">
+        <span class="index-card__no">12</span>
+        <h2 class="index-card__title">技能说明</h2>
+        <p class="index-card__desc">SKILL.md：触发条件、硬约束、页面类型与自检清单。</p>
+        <span class="index-card__en">Skill</span>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="r99-footer">
+  <div class="r99-shell">
+    <p class="r99-note">测量自游戏界面，不含游戏素材；与 Bluepoch 无关。字体 Noto Serif SC 与 Bodoni Moda 采用 SIL OFL 授权。</p>
+  </div>
+</footer>
+<script src="assets/fx.js"></script>
+</body>
+</html>

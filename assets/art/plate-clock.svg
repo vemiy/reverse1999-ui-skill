@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-label="罗盘与齿轮">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#2a2118"/>
+      <stop offset="0.6" stop-color="#1a1510"/>
+      <stop offset="1" stop-color="#0b0908"/>
+    </linearGradient>
+    <radialGradient id="warm4" cx="0.5" cy="0.4" r="0.5">
+      <stop offset="0" stop-color="#c97a2b" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#0b0908" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain4">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#bg4)"/>
+  <rect width="600" height="800" fill="url(#warm4)"/>
+
+  <g stroke="#d9c9a8" stroke-opacity="0.55" fill="none">
+    <circle cx="300" cy="380" r="150"/>
+    <circle cx="300" cy="380" r="120" stroke-opacity="0.3"/>
+    <circle cx="300" cy="380" r="58" stroke-opacity="0.8"/>
+  </g>
+
+  <g stroke="#d9c9a8" stroke-opacity="0.5">
+    <line x1="300" y1="230" x2="300" y2="250"/>
+    <line x1="300" y1="510" x2="300" y2="530"/>
+    <line x1="150" y1="380" x2="170" y2="380"/>
+    <line x1="430" y1="380" x2="450" y2="380"/>
+    <line x1="194" y1="274" x2="208" y2="288"/>
+    <line x1="406" y1="274" x2="392" y2="288"/>
+    <line x1="194" y1="486" x2="208" y2="472"/>
+    <line x1="406" y1="486" x2="392" y2="472"/>
+  </g>
+
+  <!-- 指针 -->
+  <path d="M300 320 L312 380 L300 440 L288 380 Z" fill="#b55829"/>
+  <circle cx="300" cy="380" r="7" fill="#e9dccd"/>
+
+  <text x="300" y="600" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" letter-spacing="8" fill="#d9c9a8" opacity="0.75">DEC 31</text>
+  <line x1="150" y1="620" x2="450" y2="620" stroke="#b55829" stroke-width="1" stroke-opacity="0.7"/>
+
+  <rect width="600" height="800" filter="url(#grain4)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>

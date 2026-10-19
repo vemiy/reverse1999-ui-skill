@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-label="装饰艺术拱门">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a2329"/>
+      <stop offset="0.6" stop-color="#11161a"/>
+      <stop offset="1" stop-color="#0a0c0e"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e0b070"/>
+      <stop offset="1" stop-color="#8d5423"/>
+    </linearGradient>
+    <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#b55829" fill-opacity="0.5"/>
+    </pattern>
+    <filter id="grain2">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#bg)"/>
+
+  <!-- 放射线 -->
+  <g stroke="#c97a2b" stroke-opacity="0.16">
+    <line x1="300" y1="560" x2="20" y2="40"/>
+    <line x1="300" y1="560" x2="110" y2="0"/>
+    <line x1="300" y1="560" x2="210" y2="0"/>
+    <line x1="300" y1="560" x2="300" y2="0"/>
+    <line x1="300" y1="560" x2="390" y2="0"/>
+    <line x1="300" y1="560" x2="490" y2="0"/>
+    <line x1="300" y1="560" x2="580" y2="40"/>
+  </g>
+
+  <!-- 同心拱 -->
+  <g fill="none" stroke="url(#gold)" stroke-opacity="0.75">
+    <path d="M120 660 L120 400 A180 180 0 0 1 480 400 L480 660" stroke-width="2"/>
+    <path d="M150 660 L150 405 A150 150 0 0 1 450 405 L450 660" stroke-width="1"/>
+    <path d="M182 660 L182 412 A118 118 0 0 1 418 412 L418 660" stroke-width="1"/>
+  </g>
+
+  <!-- 中央牌 -->
+  <rect x="252" y="300" width="96" height="140" fill="#0b0d0f" stroke="#b55829" stroke-width="1"/>
+  <text x="300" y="368" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#e9dccd" letter-spacing="2">19</text>
+  <text x="300" y="404" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#e9dccd" letter-spacing="2">99</text>
+
+  <!-- 底部与网点 -->
+  <rect x="0" y="660" width="600" height="140" fill="url(#dots)"/>
+  <rect x="0" y="660" width="600" height="140" fill="#0a0c0e" opacity="0.55"/>
+  <line x1="60" y1="660" x2="540" y2="660" stroke="#b55829" stroke-width="1"/>
+
+  <rect width="600" height="800" filter="url(#grain2)" opacity="0.06" style="mix-blend-mode:overlay"/>
+</svg>

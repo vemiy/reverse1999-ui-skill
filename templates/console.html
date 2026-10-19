@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark" data-accent="rust" data-density="compact" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>档案总览 · 夜航档案室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..700;1,400..600&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reverse1999.css">
+<link rel="stylesheet" href="../assets/board.css">
+</head>
+<body class="r99 board-page">
+
+<div class="r99-atmos" aria-hidden="true"></div>
+<div class="r99-rain" aria-hidden="true"></div>
+<div class="r99-grain" aria-hidden="true"></div>
+<div class="r99-vignette" aria-hidden="true"></div>
+
+<a class="r99-skip" href="#main">跳到正文</a>
+
+<header class="board-bar">
+  <div class="board-bar__inner">
+    <a class="r99-logo board-bar__logo" href="showcase.html">
+      <span class="r99-logo__zh">夜航档案室</span>
+      <span class="r99-logo__en">Night Archive</span>
+    </a>
+    <nav class="r99-nav board-bar__nav" aria-label="主导航">
+      <a href="showcase.html#index">索引</a>
+      <a href="library.html">档案</a>
+      <a href="console.html" aria-current="page">陈列板</a>
+    </nav>
+    <div class="board-bar__tools">
+      <button class="board-tool" type="button" data-r99-theme-toggle aria-pressed="false">明暗<span class="board-tool__en">Light</span></button>
+      <button class="board-tool board-tool--solid" type="button" data-r99-toast="展板已登记 · 编号 069">登记展板<span class="board-tool__en">Register</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="board-main">
+  <div class="board-wrap">
+    <section class="board" aria-labelledby="board-title">
+
+      <header class="board__head">
+        <div class="board__id">
+          <p class="board__kicker">Archive board · Case no. 069</p>
+          <h1 class="board__title" id="board-title">档案总览</h1>
+          <p class="board__sub">一九七二年三月十一日建柜 · 地下三层 · 仅限馆内调阅</p>
+        </div>
+        <dl class="board__meta">
+          <div class="board__meta-cell">
+            <dt>整理</dt>
+            <dd>值夜组 · 林</dd>
+          </div>
+          <div class="board__meta-cell">
+            <dt>更新</dt>
+            <dd>1999.12.31</dd>
+          </div>
+          <div class="board__meta-cell">
+            <dt>状态</dt>
+            <dd class="board__state">在架</dd>
+          </div>
+        </dl>
+      </header>
+
+      <div class="board__grid">
+
+        <div class="board__col board__col--poster">
+          <div class="poster-wrap" data-r99-reveal>
+            <figure class="poster">
+              <button class="tag" type="button" data-r99-toast="第 069 号陈列柜 · 一九七二年建柜，在架">
+                <span class="tag__wire" aria-hidden="true"></span>
+                <span class="tag__card">
+                  <span class="tag__ref">Case File</span>
+                  <span class="tag__no">069</span>
+                  <span class="tag__portrait" aria-hidden="true">
+                    <svg viewBox="0 0 72 60" focusable="false">
+                      <g fill="none" stroke="currentColor" stroke-width="1">
+                        <path d="M0 60V45c0-8 12-13 22-13h28c10 0 22 5 22 13v15" opacity=".55"/>
+                        <circle cx="36" cy="20" r="9" opacity=".8"/>
+                        <path d="M22 13h28l-3-5H25z" opacity=".7"/>
+                        <path d="M36 29v13M27 60V46M45 60V46" opacity=".24"/>
+                      </g>
+                    </svg>
+                  </span>
+                  <span class="tag__id">ID · 1972-0311</span>
+                </span>
+              </button>
+
+              <div class="poster__frame">
+                <div class="poster__art">
+                  <svg viewBox="0 0 420 525" role="img" aria-labelledby="plate-title plate-desc">
+                    <title id="plate-title">陈列照片：地下三层的夜间阅览室</title>
+                    <desc id="plate-desc">细线绘制的拱窗、吊灯、长桌与文件，拱窗外正在下雨。</desc>
+                    <defs>
+                      <pattern id="plate-dots" width="5" height="5" patternUnits="userSpaceOnUse">
+                        <circle cx="1" cy="1" r="0.55" fill="currentColor" opacity=".5"/>
+                      </pattern>
+                      <clipPath id="plate-window">
+                        <path d="M62 360V190a88 88 0 0 1 176 0v170z"/>
+                      </clipPath>
+                    </defs>
+                    <g fill="none" stroke="currentColor" stroke-width="1">
+                      <path d="M62 360V190a88 88 0 0 1 176 0v170" opacity=".72"/>
+                      <path d="M74 360V191a76 76 0 0 1 152 0v169" opacity=".26"/>
+                      <path d="M150 102V360M62 250h176" opacity=".2"/>
+                      <g clip-path="url(#plate-window)">
+                        <rect x="62" y="98" width="176" height="264" fill="url(#plate-dots)" stroke="none" opacity=".3"/>
+                      </g>
+                      <g clip-path="url(#plate-window)" opacity=".34">
+                        <path d="M40 140l40 80M70 110l40 80M100 130l40 80M130 100l40 80M160 120l40 80M190 95l40 80M220 125l40 80"/>
+                        <path d="M30 230l40 80M60 210l40 80M90 230l40 80M120 205l40 80M150 225l40 80M180 200l40 80M210 220l40 80"/>
+                      </g>
+                      <circle cx="330" cy="96" r="52" opacity=".16"/>
+                      <circle cx="330" cy="96" r="68" opacity=".09"/>
+                      <path d="M278 96h104M330 44v104" opacity=".1"/>
+                      <path d="M338 0v118" opacity=".5"/>
+                      <path d="M316 118h44l-10 22h-24z" opacity=".62"/>
+                      <circle cx="338" cy="146" r="5" opacity=".8"/>
+                      <path d="M322 140 236 420M354 140 400 420" opacity=".11"/>
+                      <path d="M0 430h420M0 470h420M0 510h420" opacity=".2"/>
+                      <path d="M0 430 90 360h240l90 70" opacity=".11"/>
+                      <circle cx="196" cy="332" r="8" opacity=".72"/>
+                      <path d="M182 372c0-13 6-24 14-24s14 11 14 24" opacity=".66"/>
+                      <path d="M210 361l21 8" opacity=".52"/>
+                      <path d="M228 367l14 3-14 2z" opacity=".46"/>
+                      <path d="M52 430v-58h216v58" opacity=".6"/>
+                      <path d="M52 404h216" opacity=".24"/>
+                      <path d="M66 430v-26h188v26" opacity=".28"/>
+                      <path d="M84 372h88v7H84zM92 364h88v8H92zM100 356h72v8h-72z" opacity=".66"/>
+                      <path d="M300 430v-64h44v64M300 390h44M300 366v24" opacity=".42"/>
+                      <path d="M24 60v120" opacity=".28"/>
+                      <path d="M24 60h8M24 84h5M24 108h8M24 132h5M24 156h8M24 180h5" opacity=".36"/>
+                    </g>
+                    <rect x="0" y="0" width="420" height="525" fill="url(#plate-dots)" opacity=".16"/>
+                    <g fill="none" stroke="var(--r99-accent)">
+                      <circle cx="356" cy="466" r="20" opacity=".8"/>
+                      <circle cx="356" cy="466" r="24" opacity=".32"/>
+                    </g>
+                    <text x="356" y="470" text-anchor="middle" fill="var(--r99-accent)" font-family="Bodoni Moda, Didot, serif" font-size="12" letter-spacing="1">069</text>
+                    <text x="46" y="500" fill="currentColor" opacity=".5" font-family="Bodoni Moda, Didot, serif" font-size="8" letter-spacing="3">PLATE 07</text>
+                  </svg>
+                </div>
+                <span class="poster__stamp" aria-hidden="true">陈列复制</span>
+              </div>
+
+              <figcaption class="poster__cap">
+                <span class="poster__cap-zh">地下三层 · 夜间阅览室</span>
+                <span class="poster__cap-en">Plate 07 · Silver gelatin</span>
+              </figcaption>
+            </figure>
+
+            <p class="poster-side" aria-hidden="true">Case file 069 · Night archive · 1972</p>
+            <p class="poster-note">
+              <span>Display note</span>
+              底片摄于一九七二年冬，馆内仅存一张，不作外借。
+            </p>
+          </div>
+
+          <ul class="badges" aria-label="陈列徽章" data-r99-reveal>
+            <li>
+              <button class="badge" type="button" aria-label="徽章：巡架，一九七四年授予" data-r99-toast="徽章 · 巡架：一九七四年授予">
+                <svg class="badge__ring" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                  <circle class="badge__outer" cx="24" cy="24" r="22.5"/>
+                  <circle class="badge__inner" cx="24" cy="24" r="16"/>
+                  <path class="badge__mark" d="M24 12l4 12-4 12-4-12z"/>
+                  <path class="badge__mark" d="M24 8v3M24 37v3M8 24h3M37 24h3" opacity=".5"/>
+                </svg>
+                <span class="badge__cap">巡架</span>
+              </button>
+            </li>
+            <li>
+              <button class="badge" type="button" aria-label="徽章：调阅，一九七六年授予" data-r99-toast="徽章 · 调阅：一九七六年授予">
+                <svg class="badge__ring" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                  <circle class="badge__outer" cx="24" cy="24" r="22.5"/>
+                  <circle class="badge__inner" cx="24" cy="24" r="16"/>
+                  <circle class="badge__mark" cx="20" cy="20" r="5"/>
+                  <path class="badge__mark" d="M23.5 23.5 33 33M28.5 28.5 32 25M31.5 31.5 35 28"/>
+                </svg>
+                <span class="badge__cap">调阅</span>
+              </button>
+            </li>
+            <li>
+              <button class="badge" type="button" aria-label="徽章：修复，一九八一年授予" data-r99-toast="徽章 · 修复：一九八一年授予">
+                <svg class="badge__ring" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                  <circle class="badge__outer" cx="24" cy="24" r="22.5"/>
+                  <circle class="badge__inner" cx="24" cy="24" r="16"/>
+                  <path class="badge__mark" d="M14 21h7c2 0 1 2 3 2s1-2 3-2h7v14h-7c-2 0-1 2-3 2s-1-2-3-2h-7z"/>
+                  <path class="badge__mark" d="M24 23v14"/>
+                </svg>
+                <span class="badge__cap">修复</span>
+              </button>
+            </li>
+            <li>
+              <button class="badge" type="button" aria-label="徽章：夜值，一九八三年授予" data-r99-toast="徽章 · 夜值：一九八三年授予">
+                <svg class="badge__ring" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                  <circle class="badge__outer" cx="24" cy="24" r="22.5"/>
+                  <circle class="badge__inner" cx="24" cy="24" r="16"/>
+                  <path class="badge__mark" d="M29 15a10 10 0 1 0 0 18 12 12 0 0 1 0-18z"/>
+                  <path class="badge__mark" d="M33 16l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" opacity=".8"/>
+                </svg>
+                <span class="badge__cap">夜值</span>
+              </button>
+            </li>
+            <li>
+              <button class="badge" type="button" aria-label="徽章：建柜，一九七二年授予" data-r99-toast="徽章 · 建柜：一九七二年授予">
+                <svg class="badge__ring" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                  <circle class="badge__outer" cx="24" cy="24" r="22.5"/>
+                  <circle class="badge__inner" cx="24" cy="24" r="16"/>
+                  <path class="badge__mark" d="M16 33h16M17 30V20l7-4 7 4v10M21 20v10M27 20v10"/>
+                  <path class="badge__mark" d="M15 15h18" opacity=".4"/>
+                </svg>
+                <span class="badge__cap">建柜</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="board__col board__col--data">
+          <div class="paper-wrap" data-r99-reveal>
+          <article class="paper" aria-labelledby="paper-title">
+            <span class="paper__pin" aria-hidden="true"></span>
+            <svg class="paper__sketch" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <g fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M8 112h104M20 112V96h16v16M36 96V80h16v16M52 80V64h16v16M68 64V48h16v16M84 48V32h16v16"/>
+                <path d="M96 20v20h16" opacity=".6"/>
+              </g>
+            </svg>
+
+            <header class="paper__head">
+              <p class="paper__kicker">Personnel record · 1972—1999</p>
+              <h2 class="paper__title" id="paper-title"><span>Career</span><span>Overview</span></h2>
+              <p class="paper__sub">馆员履历摘要 · 第 069 号</p>
+            </header>
+
+            <dl class="paper__entries">
+              <div class="entry">
+                <dt>巡架范围<span>Patrol</span></dt>
+                <dd>地下三层 <b>440</b> 米</dd>
+              </div>
+              <div class="entry">
+                <dt>第三阅览室<span>Room III</span></dt>
+                <dd>夜间值守 <b>6</b> 年</dd>
+              </div>
+              <div class="entry">
+                <dt>加急调阅<span>Priority</span></dt>
+                <dd>受理 <b>23</b> 次</dd>
+              </div>
+              <div class="entry">
+                <dt>沿江转运<span>Transit</span></dt>
+                <dd>往返 <b>4</b> 站</dd>
+              </div>
+              <div class="entry entry--wide">
+                <dt>密级上限<span>Clearance</span></dt>
+                <dd>第 <b>6</b> 档 · 仅限本柜</dd>
+              </div>
+            </dl>
+
+            <footer class="paper__foot">
+              <span>复核 · 1999.12.31</span>
+              <span class="paper__stamp">已 核</span>
+            </footer>
+          </article>
+          </div>
+
+          <ol class="stats" aria-label="陈列数据" data-r99-reveal>
+            <li class="stat">
+              <span class="stat__label">在架卷宗<small>Volumes on shelf</small></span>
+              <span class="stat__value">94<span class="stat__unit">卷</span></span>
+            </li>
+            <li class="stat">
+              <span class="stat__label">建柜日<small>Established</small></span>
+              <span class="stat__value stat__value--date">1972.03.11</span>
+            </li>
+            <li class="stat">
+              <span class="stat__label">值守时长<small>On duty</small></span>
+              <span class="stat__value">218<span class="stat__unit">天</span></span>
+            </li>
+            <li class="stat">
+              <span class="stat__label">累计调阅<small>Retrievals</small></span>
+              <span class="stat__value">87,626<span class="stat__unit">次</span></span>
+            </li>
+            <li class="stat">
+              <span class="stat__label">归档批次<small>Batches</small></span>
+              <span class="stat__value">167<span class="stat__unit">批</span></span>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <footer class="board__foot">
+        <p>展板为陈列复制，数据每周一换；原档请走<a href="library.html">调阅单</a>。</p>
+        <p class="board__foot-en">Display copy · do not remove</p>
+      </footer>
+    </section>
+  </div>
+</main>
+
+<script src="../assets/fx.js"></script>
+</body>
+</html>
