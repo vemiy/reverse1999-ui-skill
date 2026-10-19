@@ -2773,21 +2773,33 @@ body.r99 {
   right: 19px;
 }
 
-/* ---------- 28. 工具类 ---------- */
+/* ---------- 28. 布局与修饰 ---------- */
 
-.r99-u-flex { display: flex; }
-.r99-u-wrap { flex-wrap: wrap; }
-.r99-u-center { align-items: center; }
-.r99-u-between { justify-content: space-between; }
-.r99-u-text-center { text-align: center; }
-.r99-u-nowrap { white-space: nowrap; }
-.r99-u-gap-2 { gap: var(--r99-s2); }
-.r99-u-gap-3 { gap: var(--r99-s3); }
-.r99-u-m0 { margin: 0; }
-.r99-u-mt-1 { margin-top: var(--r99-s1); }
-.r99-u-mt-2 { margin-top: var(--r99-s2); }
-.r99-u-mt-12 { margin-top: 12px; }
-.r99-u-mt-3 { margin-top: var(--r99-s3); }
-.r99-u-mt-4 { margin-top: var(--r99-s4); }
-.r99-u-mb-2 { margin-bottom: var(--r99-s2); }
-.r99-u-mb-3 { margin-bottom: var(--r99-s3); }
+.r99-cluster,
+.r99-cluster--between {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.r99-cluster {
+  gap: var(--r99-s2);
+}
+.r99-cluster--between {
+  justify-content: space-between;
+  gap: var(--r99-s3);
+}
+.r99-cluster--loose {
+  gap: var(--r99-s3);
+}
+.r99-actions--flush {
+  margin: 0;
+}
+.r99-status--stacked {
+  margin-top: var(--r99-s2);
+}
+.r99-meta--spaced {
+  margin-bottom: var(--r99-s2);
+}
+.r99-note--spaced {
+  margin-top: var(--r99-s3);
+}
