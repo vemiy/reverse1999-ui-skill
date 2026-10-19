@@ -1,0 +1,30 @@
+name: r99_kit
+description: "re1999-ui 的 Flutter 套件：深底、米纸、锈红细线、宋体与 Didone。"
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: NotoSerifSC
+      fonts:
+        - asset: assets/fonts/NotoSerifSC-Regular.ttf
+        - asset: assets/fonts/NotoSerifSC-Bold.ttf
+          weight: 700
+    - family: BodoniModa
+      fonts:
+        - asset: assets/fonts/BodoniModa-400.ttf
+        - asset: assets/fonts/BodoniModa-600.ttf
+          weight: 600
